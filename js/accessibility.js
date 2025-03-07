@@ -1,4 +1,3 @@
-// accessibility.js
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement;
   let fontSize = parseInt(getComputedStyle(root).fontSize);
