@@ -567,7 +567,6 @@ figcaption {
 }
 
 /* Estilo para o modo inverso aplicado ao elemento html */
-/* Estilo para o modo inverso aplicado ao elemento html */
 html.inverso {
   filter: invert(100%) hue-rotate(180deg);
   background-color: #fff;
@@ -582,8 +581,7 @@ html.inverso .carousel-item {
 
 /* Ajuste específico para o header - garantindo que NÃO seja transparente */
 header {
-  /* Certifique-se de que o header tem um background-color definido */
-  background-color: #000; /* Ou qualquer outra cor apropriada para seu design */
+  background-color: #000;
 }
 
 /* Remover qualquer opacidade que possa estar afetando o header */
@@ -595,4 +593,40 @@ html.inverso header {
 html.inverso .container-header {
   background-color: inherit;
   opacity: 1 !important;
+}
+
+/* Melhorar o destaque do header durante a navegação */
+header:focus-within {
+  background-color: var(--secundaria);
+  transition: background-color 0.3s ease;
+}
+
+/* Melhorar o destaque dos botões de acessibilidade */
+.btn-acessibilidade:focus {
+  outline: 3px solid var(--terciaria);
+  background-color: var(--secundaria);
+  color: var(--quinaria);
+  transform: scale(1.1);
+}
+
+/* Adicionar indicador visual mais proeminente para foco */
+.navegacao a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--terciaria);
+}
+
+.navegacao a:focus h5 {
+  background-color: var(--secundaria);
+  color: var(--terciaria);
+}
+
+/* Melhorar a visibilidade do estado de foco para todos os elementos interativos */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+[tabindex="0"]:focus {
+  outline: 3px solid var(--terciaria);
+  box-shadow: 0 0 8px rgba(96, 72, 72, 0.6);
+  transition: all 0.2s ease;
 }
