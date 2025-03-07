@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
+
+:root {
+  --branco: #fff;
+  --primaria: #d8d8d8;
+  --secundaria: #c0c0a8;
+  --terciaria: #604848;
+  --quaternaria: #484848;
+  --quinaria: #1a1a1a;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--primaria);
+}
+
+main {
+  background-color: var(--branco);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primaria);
+  width: 100%;
+  top: 0rem;
+  position: fixed;
+  z-index: 999;
+  padding: 0.5rem 0;
+  min-height: 4rem;
+  align-items: center;
+  overflow: hidden;
+  transition: none !important;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60rem;
+  padding: 0 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+header img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.navegacao {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+}
+
+.navegacao a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navegacao h5 {
+  color: var(--quaternaria);
+  margin: 0;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navegacao a:hover h5 {
+  color: var(--terciaria);
+  background-color: var(--secundaria);
+}
+
+.sombra {
+  background-color: var(--primaria);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+section {
+  margin-bottom: 0;
+}
+
+/* Seccao Um */
+
+.conteudo {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container-texto {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: justify;
+  width: 60rem;
+}
+
+.destaque {
+  color: var(--terciaria);
+  font-weight: bold;
+}
+
+.titulo-seccaoUm {
+  margin-top: 6rem;
+}
+
+.titulo-seccaoUm,
+.titulo-seccaoDois {
+  color: black;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo-caixaUm {
+  font-size: 2rem;
+  display: flex;
+  justify-content: start;
+  padding-bottom: 1rem;
+}
+
+.texto-caixaUm {
+  margin-top: 1rem;
+}
+
+.titulo-caixaDois {
+  font-size: 2rem;
+  display: flex;
+  justify-content: start;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.texto-caixaDois {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.texto-caixaDois p {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.texto-caixaDois {
+  margin-top: 2rem;
+  background-color: var(--primaria);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Section seccaoDois  */
+
+.titulo-seccaoDois {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.texto-seccaoDois {
+  flex: 1;
+  width: 30rem;
+  text-align: justify;
+  display: start;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card-um,
+.card-dois {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 60rem;
+  padding: 1rem;
+  border-radius: 8px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card-um {
+  background-color: var(--primaria);
+  margin-bottom: 3rem;
+}
+
+.card-dois {
+  background-color: var(--secundaria);
+}
+
+.imagem-seccaoDois {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#seccaoDois img {
+  width: 19rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+figcaption {
+  width: 19rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--quinaria);
+}
+
+/* Section seccaoTres */
+#seccaoTres {
+  background-color: var(--primaria);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.container-seccaoTres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.informacoes-seccaoTres {
+  background-color: var(--quaternaria);
+  color: #fff;
+  width: 60rem;
+  text-align: justify;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.titulo-seccaoTres {
+  font-size: 2rem;
+}
+
+.subtitulo-seccaoTres {
+  color: var(--secundaria);
+}
+
+.subtitulo-seccaoTres h3 {
+  font-size: 1.5rem;
+}
+
+/* Container do botão */
+.botao-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo do botão */
+.botao-seccaoTres {
+  background-color: var(--secundaria);
+  color: var(--quinaria);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-seccaoTres:hover {
+  background-color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botao-seccaoTres:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Section seccaoQuatro - Formulário */
+#seccaoQuatro {
+  padding: 0;
+  margin-top: 0;
+}
+
+.container-form {
+  background-color: var(--secundaria);
+  width: 60rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.titulo-form {
+  color: var(--quinaria);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.campo-form label {
+  color: var(--quinaria);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.campo-form input,
+.campo-form textarea {
+  padding: 0.6rem;
+  border: 2px solid var(--quaternaria);
+  border-radius: 4px;
+  background-color: var(--primaria);
+  color: var(--quinaria);
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.campo-form textarea {
+  resize: vertical;
+  height: 120px;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.botoes-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn-enviar,
+.btn-limpar {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-enviar {
+  background-color: var(--terciaria);
+  color: var(--primaria);
+}
+
+.btn-limpar {
+  background-color: var(--quaternaria);
+  color: var(--primaria);
+}
+
+.btn-enviar:hover {
+  background-color: var(--quinaria);
+}
+
+.btn-limpar:hover {
+  background-color: var(--quinaria);
+}
+
+/* Footer  */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+}
+
+.footer-content {
+  flex: 2;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rodape {
+  background-color: #333333;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.rodape p,
+.lista-links a {
+  font-size: 1rem;
+}
+
+.lista-links p {
+  font-size: 1.1rem;
+}
+
+.lista-links {
+  margin: 1.5rem 0;
+}
+
+.lista-links p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.links-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.links-row a {
+  color: var(--primaria);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.5rem;
+}
+
+.links-row a:hover {
+  color: var(--secundaria);
+  background-color: var(--quaternaria);
+  border-radius: 4px;
+}
+
+.separator {
+  color: var(--primaria);
+}
+
+.fa-brands {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--terciaria);
+  transition: color 0.3s ease;
+}
+
+.fa-instagram,
+.fa-github,
+.fa-facebook,
+.fa-twitter {
+  transition: color 0.3s ease;
+}
+
+.fa-brands:hover {
+  color: var(--primaria);
+}
+
+/* Outros */
+
+/* Botão Voltar ao Topo */
+.voltar-topo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 2rem;
+}
+
+.btn-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--terciaria);
+  color: var(--primaria);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-topo i {
+  font-size: 1.2rem;
+}
+
+.btn-topo:hover {
+  background-color: var(--quaternaria);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para o carousel */
+.carousel {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 20rem;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Acessibilidade */
+.botoes-acessibilidade {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.btn-acessibilidade {
+  background: none;
+  border: 2px solid var(--quaternaria);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--quaternaria);
+  transition: transform 0.2s ease;
+}
+
+.btn-acessibilidade:hover {
+  background-color: var(--secundaria);
+  transform: scale(1.1);
+}
+
+/* Estilo para o modo inverso aplicado ao elemento html */
+/* Estilo para o modo inverso aplicado ao elemento html */
+html.inverso {
+  filter: invert(100%) hue-rotate(180deg);
+  background-color: #fff;
+}
+
+/* Reinverter imagens e elementos de mídia para manter cores originais */
+html.inverso img,
+html.inverso video,
+html.inverso .carousel-item {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Ajuste específico para o header - garantindo que NÃO seja transparente */
+header {
+  /* Certifique-se de que o header tem um background-color definido */
+  background-color: #000; /* Ou qualquer outra cor apropriada para seu design */
+}
+
+/* Remover qualquer opacidade que possa estar afetando o header */
+html.inverso header {
+  opacity: 1 !important;
+}
+
+/* Se houver alguma propriedade de transparência no header */
+html.inverso .container-header {
+  background-color: inherit;
+  opacity: 1 !important;
+}

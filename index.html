@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="img/img_baixa_fidelidade.png" type="image/png" />
+  </head>
+  <body>
+    <header class="sombra">
+      <div class="container-header">
+        <!-- Container do logotipo -->
+        <div class="logo-container">
+          <img src="img/img_baixa_fidelidade.png" alt="logo" />
+        </div>
+        <!-- Container de navegação -->
+        <nav class="navegacao">
+          <a href="#seccaoUm"><h5 class="texto-secundario">LOREM</h5></a>
+          <a href="#seccaoDois"><h5 class="texto-secundario">IPSUM</h5></a>
+          <a href="#seccaoTres"><h5 class="texto-secundario">DOLOR</h5></a>
+          <a href="#seccaoQuatro"><h5 class="texto-secundario">CONTATO</h5></a>
+        </nav>
+        <!-- Container dos botões de acessibilidade -->
+        <div class="botoes-acessibilidade">
+          <button
+            class="btn-acessibilidade"
+            onclick="aumentarFonte()"
+            aria-label="Aumentar fonte"
+          >
+            <i class="fas fa-text-height"></i>
+          </button>
+          <button
+            class="btn-acessibilidade"
+            onclick="diminuirFonte()"
+            aria-label="Diminuir fonte"
+          >
+            <i class="fas fa-text-width"></i>
+          </button>
+          <button
+            class="btn-acessibilidade"
+            onclick="inverterCores()"
+            aria-label="Inverter cores"
+          >
+            <i class="fas fa-adjust"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!--section seccaoUm-->
+      <h1 class="titulo-seccaoUm">Lorem Ipsum</h1>
+
+      <section id="seccaoUm">
+        <div class="conteudo">
+          <div class="container-texto">
+            <div class="texto-caixaUm">
+              <h1 class="titulo-caixaUm">
+                <strong>Lorem ipsum </strong>
+                <span class="destaque">dolor sit amet</span>
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+
+            <div class="texto-caixaDois">
+              <h1 class="titulo-caixaDois">
+                <strong>Lorem </strong>
+                <span class="destaque">dolor sit amet</span>
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--section seccaoDois-->
+      <h1 class="titulo-seccaoDois">Lorem Ipsum</h1>
+
+      <section id="seccaoDois">
+        <div class="conteudo">
+          <div class="card-um">
+            <div class="imagem-seccaoDois">
+              <div class="container" style="width: 20rem">
+                <div id="carouselExemplo" class="carousel slide">
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo"
+                      data-bs-slide-to="3"
+                      aria-label="Slide 4"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner" style="height: 20rem">
+                    <div class="carousel-item active">
+                      <img
+                        src="https://img.odcdn.com.br/wp-content/uploads/2024/10/imagem_2024-10-28_115513214-1920x1080.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExemplo"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExemplo"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <figcaption>Lorem ipsum dolor sit amet (2021)</figcaption>
+            </div>
+
+            <div class="texto-seccaoDois">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="conteudo">
+          <div class="card-dois">
+            <div class="texto-seccaoDois">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <div class="imagem-seccaoDois">
+              <div class="container" style="width: 20rem">
+                <div id="carouselExemplo2" class="carousel slide">
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo2"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo2"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExemplo2"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner" style="height: 20rem">
+                    <div class="carousel-item active">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/img_baixa_fidelidade.png"
+                        class="d-block w-100"
+                        alt="Lorem ipsum"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExemplo2"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExemplo2"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <figcaption>
+                Lorem ipsum dolor sit amet (2022) Lorem ipsum: Dolor sit amet
+              </figcaption>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--section seccaoTres-->
+      <section id="seccaoTres">
+        <div class="conteudo">
+          <div class="container-seccaoTres">
+            <div class="informacoes-seccaoTres">
+              <h2 class="titulo-seccaoTres">LOREM IPSUM</h2>
+              <h3 class="subtitulo-seccaoTres">Dolor sit amet</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <!-- Botão adicionado -->
+              <div class="botao-container">
+                <button class="botao-seccaoTres">Lorem Ipsum</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--section seccaoQuatro - Formulário de Contato-->
+      <section id="seccaoQuatro">
+        <div class="conteudo">
+          <div class="container-form">
+            <h2 class="titulo-form">Entre em Contato</h2>
+            <form class="formulario-contato">
+              <div class="campo-form">
+                <label for="nome">Nome:</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome"
+                  required
+                />
+              </div>
+
+              <div class="campo-form">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Digite seu email"
+                  required
+                />
+              </div>
+
+              <div class="campo-form">
+                <label for="mensagem">Mensagem:</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="5"
+                  placeholder="Digite sua mensagem"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="botoes-form">
+                <button type="submit" class="btn-enviar">Enviar</button>
+                <button type="reset" class="btn-limpar">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botão Voltar ao Topo -->
+      <div class="voltar-topo">
+        <a href="#" class="btn-topo">
+          <i class="fa-solid fa-arrow-up"></i>
+          Voltar ao começo da página
+        </a>
+      </div>
+
+      <!--Rodapé -->
+      <section id="footer">
+        <footer class="rodape">
+          <div class="footer-container">
+            <div class="footer-logo">
+              <img src="img/img_baixa_fidelidade.png" id="logo" />
+            </div>
+            <div class="footer-content">
+              <p>
+                Lorem ipsum dolor sit amet
+                <span class="destaque">consectetur adipiscing</span> elit sed do
+                eiusmod
+              </p>
+              <div class="lista-links">
+                <p>Lorem Ipsum</p>
+                <div class="links-row">
+                  <a href="#" target="_blank">Lorem</a>
+                  <span class="separator">|</span>
+                  <a href="#" target="_blank">Ipsum</a>
+                  <span class="separator">|</span>
+                  <a href="#" target="_blank">Dolor</a>
+                </div>
+              </div>
+              <div class="social-links">
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/accessibility.js"></script>
+</html>
