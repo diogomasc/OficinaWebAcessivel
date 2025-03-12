@@ -1,36 +1,67 @@
+/* ========== VARIÁVEIS E IMPORTAÇÕES ========== */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
 
 :root {
+  /* Variáveis de cores */
   --branco: #fff;
-  --primaria: #d8d8d8;
-  --secundaria: #c0c0a8;
-  --terciaria: #604848;
-  --quaternaria: #484848;
-  --quinaria: #1a1a1a;
-  font-size: 16px;
+  --preto: #1a1a1a;
+  --primaria: #e4ebf0;
+  --secundaria: #bdd1de;
+  --terciaria: #8ab3cf;
+  --quaternaria: #4180ab;
+
+  /* Escala tipográfica */
+  --font-size-base: 16px;
+  --font-h1: 2.5rem; /* 2.5rem */
+  --font-h2: 2rem; /* 2rem */
+  --font-h3: 1.5rem; /* 1.5rem */
+  --font-p: 1rem; /* 1rem */
+  --font-small: 0.9rem; /* 0.9rem */
+
+  /* Espaçamento */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Raio da borda */
+  --border-radius: 8px;
+
+  /* Transições */
+  --transition-fast: 0.2s ease;
+  --transition-default: 0.3s ease;
+
+  /* Largura do conteúdo */
+  --content-width: 60rem;
 }
+
+/* ==========ESTILOS BASE ==========*/
 
 body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  background-color: var(--primaria);
-}
-
-main {
   background-color: var(--branco);
+  color: var(--preto);
 }
 
-/* Header */
+html {
+  font-size: var(--font-size-base);
+}
+
+/* ========== ESTILOS DO CABEÇALHO ========== */
+
 header {
   display: flex;
   justify-content: center;
-  background-color: var(--primaria);
+  background-color: var(--branco);
   width: 100%;
-  top: 0rem;
+  top: 0;
   position: fixed;
   z-index: 999;
-  padding: 0.5rem 0;
+  padding: var(--spacing-xs) 0;
   min-height: 4rem;
   align-items: center;
   overflow: hidden;
@@ -41,8 +72,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60rem;
-  padding: 0 1rem;
+  width: var(--content-width);
+  padding: 0 var(--spacing-sm);
 }
 
 .logo-container {
@@ -56,45 +87,39 @@ header img {
   height: 3rem;
 }
 
-.navegacao {
+nav {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   align-items: center;
   justify-content: center;
   flex: 2;
+  height: 20px;
 }
 
-.navegacao a {
+nav a {
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: var(--transition-default);
 }
 
-.navegacao h5 {
+nav h5 {
   color: var(--quaternaria);
   margin: 0;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: var(--font-p);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 4px;
 }
 
-.navegacao a:hover h5 {
-  color: var(--terciaria);
+nav a:hover h5 {
+  color: var(--quaternaria);
   background-color: var(--secundaria);
 }
 
 .sombra {
   background-color: var(--primaria);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
-    0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-section {
-  margin-bottom: 0;
-}
-
-/* Seccao Um */
+/* ========== SEÇÃO 1 - INTRODUÇÃO ========== */
 
 .conteudo {
   padding-top: 0;
@@ -108,11 +133,11 @@ section {
   flex-direction: column;
   flex-wrap: wrap;
   text-align: justify;
-  width: 60rem;
+  width: var(--content-width);
 }
 
 .destaque {
-  color: var(--terciaria);
+  color: var(--quaternaria);
   font-weight: bold;
 }
 
@@ -122,86 +147,74 @@ section {
 
 .titulo-seccaoUm,
 .titulo-seccaoDois {
-  color: black;
-  font-size: 2.5rem;
+  color: var(--preto);
+  font-size: var(--font-h1);
   display: flex;
   justify-content: center;
 }
 
 .titulo-caixaUm {
-  font-size: 2rem;
+  font-size: var(--font-h2);
   display: flex;
   justify-content: start;
-  padding-bottom: 1rem;
+  padding-bottom: var(--spacing-sm);
 }
 
 .texto-caixaUm {
-  margin-top: 1rem;
+  margin-top: var(--spacing-sm);
+}
+
+.texto-caixaUm p {
+  font-size: var(--font-p);
 }
 
 .titulo-caixaDois {
-  font-size: 2rem;
+  font-size: var(--font-h2);
   display: flex;
   justify-content: start;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-sm);
 }
 
 .texto-caixaDois {
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: var(--font-h3);
+  padding: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  background-color: var(--primaria);
+  border-radius: var(--border-radius);
 }
 
 .texto-caixaDois p {
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 var(--spacing-sm) var(--spacing-sm);
+  font-size: var(--font-p);
 }
 
-.texto-caixaDois {
-  margin-top: 2rem;
-  background-color: var(--primaria);
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-/* Section seccaoDois  */
+/* ========== SEÇÃO 2 - RECURSOS ========== */
 
 .titulo-seccaoDois {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding: var(--spacing-lg) 0;
 }
 
 .texto-seccaoDois {
   flex: 1;
   width: 30rem;
   text-align: justify;
-  display: start;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /* padding: 0 var(--spacing-sm); */
 }
 
-.card-um,
-.card-dois {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 60rem;
-  padding: 1rem;
-  border-radius: 8px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.texto-seccaoDois p {
+  font-size: var(--font-p);
 }
 
 .card-um {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: var(--content-width);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg) var(--spacing-sm);
   background-color: var(--primaria);
-  margin-bottom: 3rem;
-}
-
-.card-dois {
-  background-color: var(--secundaria);
+  /* margin-bottom: var(--spacing-xl); */
 }
 
 .imagem-seccaoDois {
@@ -220,38 +233,52 @@ section {
 figcaption {
   width: 19rem;
   font-weight: 600;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+  font-size: var(--font-small);
+  margin-top: var(--spacing-xs);
   text-align: center;
-  color: var(--quinaria);
+  color: var(--preto);
 }
 
-/* Section seccaoTres */
-#seccaoTres {
-  background-color: var(--primaria);
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+/* Específico do carrossel */
+.carousel {
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
+
+.carousel-inner {
+  height: 20rem;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== SEÇÃO 3 - WCAG ========== */
 
 .container-seccaoTres {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin: var(--spacing-xl) 0;
 }
 
 .informacoes-seccaoTres {
   background-color: var(--quaternaria);
-  color: #fff;
-  width: 60rem;
+  color: var(--branco);
+  width: var(--content-width);
   text-align: justify;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+}
+
+.informacoes-seccaoTres p {
+  font-size: var(--font-p);
 }
 
 .titulo-seccaoTres {
-  font-size: 2rem;
+  font-size: var(--font-h2);
 }
 
 .subtitulo-seccaoTres {
@@ -259,42 +286,41 @@ figcaption {
 }
 
 .subtitulo-seccaoTres h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-h3);
 }
 
-/* Container do botão */
-.botao-container {
+.btn-seccaoTres {
   display: flex;
+  gap: var(--spacing-sm);
   justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: var(--spacing-sm);
 }
 
-/* Estilo do botão */
-.botao-seccaoTres {
-  background-color: var(--secundaria);
-  color: var(--quinaria);
+.btn-saibaMais {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.6rem 1.5rem;
+  background-color: var(--terciaria);
+  color: var(--primaria);
+  text-decoration: none;
   border: none;
-  border-radius: 8px;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  border-radius: 4px;
   font-weight: bold;
+  font-size: var(--font-small);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color var(--transition-default),
+    transform var(--transition-default), box-shadow var(--transition-default);
 }
 
-.botao-seccaoTres:hover {
+.btn-saibaMais:hover {
   background-color: var(--branco);
-  transform: translateY(-2px);
+  color: var(--quaternaria);
+  transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.botao-seccaoTres:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Section seccaoQuatro - Formulário */
+/* ========== SEÇÃO 4 - FORMULÁRIO DE CONTATO ==========*/
 #seccaoQuatro {
   padding: 0;
   margin-top: 0;
@@ -302,36 +328,36 @@ figcaption {
 
 .container-form {
   background-color: var(--secundaria);
-  width: 60rem;
-  padding: 1.5rem;
-  border-radius: 8px;
+  width: var(--content-width);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
   margin: 0 auto;
 }
 
 .titulo-form {
-  color: var(--quinaria);
+  color: var(--preto);
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-md);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--font-h3);
 }
 
 .formulario-contato {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-sm);
 }
 
 .campo-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
 }
 
 .campo-form label {
-  color: var(--quinaria);
+  color: var(--preto);
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: var(--font-small);
 }
 
 .campo-form input,
@@ -340,8 +366,8 @@ figcaption {
   border: 2px solid var(--quaternaria);
   border-radius: 4px;
   background-color: var(--primaria);
-  color: var(--quinaria);
-  font-size: 0.9rem;
+  color: var(--preto);
+  font-size: var(--font-small);
   width: 100%;
 }
 
@@ -355,48 +381,64 @@ figcaption {
 
 .botoes-form {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-sm);
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: var(--spacing-sm);
 }
 
 .btn-enviar,
 .btn-limpar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
   padding: 0.6rem 1.5rem;
+  background-color: var(--terciaria);
+  color: var(--primaria);
+  text-decoration: none;
   border: none;
   border-radius: 4px;
   font-weight: bold;
+  font-size: var(--font-small);
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 0.9rem;
+  transition: background-color var(--transition-default),
+    transform var(--transition-default), box-shadow var(--transition-default);
 }
 
-.btn-enviar {
-  background-color: var(--terciaria);
-  color: var(--primaria);
-}
-
-.btn-limpar {
-  background-color: var(--quaternaria);
-  color: var(--primaria);
-}
-
-.btn-enviar:hover {
-  background-color: var(--quinaria);
-}
-
+.btn-enviar:hover,
 .btn-limpar:hover {
-  background-color: var(--quinaria);
+  background-color: var(--quaternaria);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer  */
+.contador-caracteres {
+  display: block;
+  font-size: var(--font-small);
+  color: #666;
+  margin-top: 5px;
+  text-align: right;
+  transition: color var(--transition-default);
+}
+
+.contador-alerta {
+  color: orange;
+  font-weight: bold;
+}
+
+.contador-limite {
+  color: red;
+  font-weight: bold;
+}
+
+/* ========== RODAPÉ ========== */
+
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60rem;
+  width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: var(--spacing-lg) var(--spacing-sm);
 }
 
 .footer-logo {
@@ -418,20 +460,20 @@ figcaption {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
 }
 
 .rodape {
   background-color: #333333;
-  color: #fff;
+  color: var(--branco);
   font-size: 14px;
   text-align: center;
 }
 
 .rodape p,
 .lista-links a {
-  font-size: 1rem;
+  font-size: var(--font-p);
 }
 
 .lista-links p {
@@ -439,11 +481,11 @@ figcaption {
 }
 
 .lista-links {
-  margin: 1.5rem 0;
+  margin: var(--spacing-md) 0;
 }
 
 .lista-links p {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-xs);
   font-weight: bold;
 }
 
@@ -451,14 +493,14 @@ figcaption {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
 }
 
 .links-row a {
   color: var(--primaria);
   text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 0.3rem 0.5rem;
+  transition: var(--transition-default);
+  padding: 0.3rem var(--spacing-xs);
 }
 
 .links-row a:hover {
@@ -471,44 +513,43 @@ figcaption {
   color: var(--primaria);
 }
 
+/* Ícones sociais */
 .fa-brands {
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-xs);
   color: var(--terciaria);
-  transition: color 0.3s ease;
-}
-
-.fa-instagram,
-.fa-github,
-.fa-facebook,
-.fa-twitter {
-  transition: color 0.3s ease;
+  transition: color var(--transition-default);
 }
 
 .fa-brands:hover {
   color: var(--primaria);
 }
 
-/* Outros */
+/* ========== CLASSES UTILITÁRIAS ========== */
 
-/* Botão Voltar ao Topo */
+/* Botão de voltar ao topo */
+
 .voltar-topo {
   display: flex;
   justify-content: flex-end;
-  margin: 2rem 2rem;
+  margin: var(--spacing-lg);
 }
 
 .btn-topo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  gap: var(--spacing-xs);
+  padding: 0.6rem 1.5rem;
   background-color: var(--terciaria);
   color: var(--primaria);
   text-decoration: none;
+  border: none;
   border-radius: 4px;
-  transition: all 0.3s ease;
   font-weight: bold;
+  font-size: var(--font-small);
+  cursor: pointer;
+  transition: background-color var(--transition-default),
+    transform var(--transition-default), box-shadow var(--transition-default);
 }
 
 .btn-topo i {
@@ -521,26 +562,13 @@ figcaption {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajustes para o carousel */
-.carousel {
-  border-radius: 8px;
-  overflow: hidden;
-}
+/* ========== RECURSOS DE ACESSIBILIDADE ========== */
 
-.carousel-inner {
-  height: 20rem;
-}
+/* Botões de acessibilidade */
 
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Acessibilidade */
 .botoes-acessibilidade {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
   align-items: center;
   flex: 1;
   justify-content: flex-end;
@@ -556,9 +584,8 @@ figcaption {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: var(--transition-default);
   color: var(--quaternaria);
-  transition: transform 0.2s ease;
 }
 
 .btn-acessibilidade:hover {
@@ -566,67 +593,81 @@ figcaption {
   transform: scale(1.1);
 }
 
-/* Estilo para o modo inverso aplicado ao elemento html */
+/* Modo de cores invertidas */
+
 html.inverso {
   filter: invert(100%) hue-rotate(180deg);
-  background-color: #fff;
+  background-color: var(--branco);
 }
 
-/* Reinverter imagens e elementos de mídia para manter cores originais */
 html.inverso img,
 html.inverso video,
 html.inverso .carousel-item {
   filter: invert(100%) hue-rotate(180deg);
 }
 
-/* Ajuste específico para o header - garantindo que NÃO seja transparente */
-header {
-  background-color: #000;
-}
-
-/* Remover qualquer opacidade que possa estar afetando o header */
-html.inverso header {
-  opacity: 1 !important;
-}
-
-/* Se houver alguma propriedade de transparência no header */
-html.inverso .container-header {
-  background-color: inherit;
-  opacity: 1 !important;
-}
-
-/* Melhorar o destaque do header durante a navegação */
-header:focus-within {
-  background-color: var(--secundaria);
-  transition: background-color 0.3s ease;
-}
-
-/* Melhorar o destaque dos botões de acessibilidade */
-.btn-acessibilidade:focus {
-  outline: 3px solid var(--terciaria);
-  background-color: var(--secundaria);
-  color: var(--quinaria);
-  transform: scale(1.1);
-}
-
-/* Adicionar indicador visual mais proeminente para foco */
-.navegacao a:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--terciaria);
-}
-
-.navegacao a:focus h5 {
-  background-color: var(--secundaria);
-  color: var(--terciaria);
-}
-
-/* Melhorar a visibilidade do estado de foco para todos os elementos interativos */
+/* Estados de foco para acessibilidade via teclado */
 a:focus,
 button:focus,
 input:focus,
 textarea:focus,
 [tabindex="0"]:focus {
   outline: 3px solid var(--terciaria);
-  box-shadow: 0 0 8px rgba(96, 72, 72, 0.6);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-fast);
+}
+
+/* Estados de foco para links e botões */
+a:focus {
+  color: var(--quaternaria) !important;
+  text-decoration: underline;
+  box-shadow: 0 0 0 3px var(--terciaria);
+  transform: translateY(-2px);
+}
+
+button:focus,
+.btn-enviar:focus,
+.btn-limpar:focus,
+.btn-saibaMais:focus,
+.btn-topo:focus,
+.btn-acessibilidade:focus {
+  box-shadow: 0 0 0 3px var(--terciaria);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Estados de foco para elementos de formulário */
+input:focus,
+textarea:focus {
+  border-color: var(--quaternaria);
+  box-shadow: 0 0 0 3px var(--terciaria);
+  outline: none;
+  background-color: var(--branco);
+}
+
+/* Estados de foco para navegação */
+nav a:focus h5 {
+  background-color: var(--quaternaria);
+  color: var(--branco);
+  transform: translateY(-2px);
+}
+
+/* Estados de foco para links no rodapé */
+.links-row a:focus {
+  color: var(--secundaria);
+  background-color: var(--quaternaria);
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Estados de foco para ícones de mídia social */
+.fa-brands:focus {
+  color: var(--branco);
+  transform: scale(1.2);
+}
+
+/* Maior especificidade para focus-visible */
+:focus-visible {
+  outline: 3px solid var(--terciaria);
+  outline-offset: 2px;
 }

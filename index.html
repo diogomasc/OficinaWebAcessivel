@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oficina Web</title>
+    <meta
+      name="description"
+      content="Oficina sobre acessibilidade web e recursos para inclusão digital no IFBA campus Feira de Santana"
+    />
+    <title>Oficina de Acessibilidade Web - IFBA</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -17,39 +21,38 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="icon" href="img/img_baixa_fidelidade.png" type="image/png" />
+    <link rel="icon" href="img/simbolo_acessibilidade.png" type="image/png" />
   </head>
   <body>
+    <!-- Adicionei skip link para permitir que usuários de teclado pulem direto para o conteúdo principal mas por alguma razao o header está sobre ele -->
+    <!-- <a href="#conteudo-principal" class="skip-link" tabindex="0"
+      >Pular para o conteúdo principal</a
+    > -->
+
     <header class="sombra" role="banner">
       <div class="container-header">
-        <!-- Container do logotipo -->
         <div class="logo-container">
           <img
-            src="img/img_baixa_fidelidade.png"
-            alt="logo da Oficina Web"
+            src="img/simbolo_acessibilidade.png"
+            alt="Símbolo internacional de acessibilidade - Pessoa em cadeira de rodas em fundo azul"
             tabindex="0"
           />
         </div>
-        <!-- Container de navegação -->
-        <nav
-          class="navegacao"
-          role="navigation"
-          aria-label="Navegação principal"
-        >
+        <nav role="navigation" aria-label="Navegação principal">
           <a href="#seccaoUm" tabindex="0" aria-current="page"
-            ><h5 class="texto-secundario">LOREM</h5></a
+            ><h5 class="texto-secundario">Introdução</h5></a
           >
           <a href="#seccaoDois" tabindex="0"
-            ><h5 class="texto-secundario">IPSUM</h5></a
+            ><h5 class="texto-secundario">Recursos</h5></a
           >
           <a href="#seccaoTres" tabindex="0"
-            ><h5 class="texto-secundario">DOLOR</h5></a
+            ><h5 class="texto-secundario">WCAG</h5></a
           >
+
           <a href="#seccaoQuatro" tabindex="0"
-            ><h5 class="texto-secundario">CONTATO</h5></a
+            ><h5 class="texto-secundario">Contato</h5></a
           >
         </nav>
-        <!-- Container dos botões de acessibilidade -->
         <div
           class="botoes-acessibilidade"
           role="group"
@@ -57,27 +60,27 @@
         >
           <button
             class="btn-acessibilidade"
-            onclick="aumentarFonte()"
-            aria-label="Aumentar fonte"
+            onclick="increaseFontSize()"
+            aria-label="Aumentar tamanho da fonte (torna o texto maior)"
             tabindex="0"
           >
-            <i class="fas fa-text-height"></i>
+            <i class="fas fa-text-height" aria-hidden="true"></i>
           </button>
           <button
             class="btn-acessibilidade"
-            onclick="diminuirFonte()"
-            aria-label="Diminuir fonte"
+            onclick="decreaseFontSize()"
+            aria-label="Diminuir tamanho da fonte (torna o texto menor)"
             tabindex="0"
           >
-            <i class="fas fa-text-width"></i>
+            <i class="fas fa-text-width" aria-hidden="true"></i>
           </button>
           <button
             class="btn-acessibilidade"
-            onclick="inverterCores()"
-            aria-label="Inverter cores"
+            onclick="toggleColorInversion()"
+            aria-label="Inverter cores (alto contraste)"
             tabindex="0"
           >
-            <i class="fas fa-adjust"></i>
+            <i class="fas fa-adjust" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -85,37 +88,45 @@
 
     <main id="conteudo-principal" role="main">
       <!--section seccaoUm-->
-      <h1 class="titulo-seccaoUm" tabindex="0">Lorem Ipsum</h1>
-
-      <section id="seccaoUm" role="region" aria-labelledby="titulo-seccaoUm">
+      <div class="seccao" id="seccaoUm"></div>
+      <section role="region" aria-labelledby="titulo-seccaoUm">
+        <h1 class="titulo-seccaoUm" id="titulo-seccaoUm" tabindex="0">
+          Um site Web acessível
+        </h1>
         <div class="conteudo">
           <div class="container-texto">
             <div class="texto-caixaUm">
               <h2 class="titulo-caixaUm" id="titulo-caixaUm" tabindex="0">
-                <strong>Lorem ipsum </strong>
-                <span class="destaque">dolor sit amet</span>
+                <strong
+                  >A tecnologia a favor da acessibilidade e inclusão</strong
+                >
+                <span class="destaque"></span>
               </h2>
               <p tabindex="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                As pessoas com deficiência sofrem com espaços que não são
+                pensados para eles, enfrentam diversas barreiras em diferentes
+                áreas de suas vidas. No intuito de garantir a inclusão e
+                acessibilidade por parte dessas pessoas, foram criadas as
+                tecnologias assistivas. "Para as pessoas sem deficiência a
+                tecnologia torna as coisas mais fáceis. Para as pessoas com
+                deficiência, a tecnologia torna as coisas possíveis".
+                (RADABAUGH, 1993).
               </p>
             </div>
 
             <div class="texto-caixaDois">
               <h2 class="titulo-caixaDois" id="titulo-caixaDois" tabindex="0">
-                <strong>Lorem </strong>
-                <span class="destaque">dolor sit amet</span>
+                <strong>O que é acessibilidade web?</strong>
+                <span class="destaque"></span>
               </h2>
               <p tabindex="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                É a prática inclusiva de fazer websites que possam ser acessados
+                por pessoas com ou sem deficiências. Seguindo as diretrizes de
+                acessibilidade o conteúdo se torna acessível a um maior número
+                de pessoas com deficiência, incluindo cegueira e baixa visão,
+                surdez e baixa audição, dificuldades de aprendizagem, limitações
+                cognitivas, limitações de movimentos, incapacidades de fala,
+                fotossensibilidade e combinações destas características.
               </p>
             </div>
           </div>
@@ -123,15 +134,12 @@
       </section>
 
       <!--section seccaoDois-->
-      <h1 class="titulo-seccaoDois" id="titulo-seccaoDois" tabindex="0">
-        Lorem Ipsum
-      </h1>
+      <div class="seccao" id="seccaoDois"></div>
+      <section role="region" aria-labelledby="titulo-seccaoDois">
+        <h1 class="titulo-seccaoDois" id="titulo-seccaoDois" tabindex="0">
+          Recursos de acessibilidade ao computador
+        </h1>
 
-      <section
-        id="seccaoDois"
-        role="region"
-        aria-labelledby="titulo-seccaoDois"
-      >
         <div class="conteudo">
           <div class="card-um">
             <div class="imagem-seccaoDois">
@@ -140,7 +148,9 @@
                   id="carouselExemplo"
                   class="carousel slide"
                   aria-roledescription="carrossel"
-                  aria-label="Imagens de demonstração"
+                  aria-label="Exemplos de tecnologias assistivas"
+                  data-bs-interval="7000"
+                  data-bs-pause="hover"
                 >
                   <div class="carousel-indicators">
                     <button
@@ -149,58 +159,59 @@
                       data-bs-slide-to="0"
                       class="active"
                       aria-current="true"
-                      aria-label="Slide 1"
+                      aria-label="Slide 1 - Mouse alternativo"
                       tabindex="0"
                     ></button>
                     <button
                       type="button"
                       data-bs-target="#carouselExemplo"
                       data-bs-slide-to="1"
-                      aria-label="Slide 2"
+                      aria-label="Slide 2 - Órtese para digitação"
                       tabindex="0"
                     ></button>
                     <button
                       type="button"
                       data-bs-target="#carouselExemplo"
                       data-bs-slide-to="2"
-                      aria-label="Slide 3"
+                      aria-label="Slide 3 - Leitor de tela"
                       tabindex="0"
                     ></button>
                     <button
                       type="button"
                       data-bs-target="#carouselExemplo"
                       data-bs-slide-to="3"
-                      aria-label="Slide 4"
+                      aria-label="Slide 4 - Teclado adaptado"
                       tabindex="0"
                     ></button>
                   </div>
                   <div class="carousel-inner" style="height: 20rem">
+                    <!-- Comentário: Melhorei as descrições alt das imagens para torná-las mais informativas -->
                     <div class="carousel-item active" aria-live="polite">
                       <img
-                        src="https://img.odcdn.com.br/wp-content/uploads/2024/10/imagem_2024-10-28_115513214-1920x1080.png"
+                        src="img/mouse_alternativo.png"
                         class="d-block w-100"
-                        alt="Lorem ipsum"
+                        alt="Mouse de computador alternativo com esfera na parte superior para movimento com dedos ao invés da mão inteira"
                       />
                     </div>
                     <div class="carousel-item" aria-live="polite">
                       <img
-                        src="img/img_baixa_fidelidade.png"
+                        src="img/ortese_para_digitacao.png"
                         class="d-block w-100"
-                        alt="Lorem ipsum"
+                        alt="Uma mão utilizando uma órtese adaptada para facilitar a digitação em teclado para pessoas com mobilidade reduzida"
                       />
                     </div>
                     <div class="carousel-item" aria-live="polite">
                       <img
-                        src="img/img_baixa_fidelidade.png"
+                        src="img/leitor_de_tela.png"
                         class="d-block w-100"
-                        alt="Lorem ipsum"
+                        alt="Logotipo do software JAWS, um dos leitores de tela mais populares para pessoas com deficiência visual"
                       />
                     </div>
                     <div class="carousel-item" aria-live="polite">
                       <img
-                        src="img/img_baixa_fidelidade.png"
+                        src="img/letras_adesivas.png"
                         class="d-block w-100"
-                        alt="Lorem ipsum"
+                        alt="Teclado de computador com letras adesivas ampliadas para melhor visualização por pessoas com baixa visão"
                       />
                     </div>
                   </div>
@@ -210,6 +221,7 @@
                     data-bs-target="#carouselExemplo"
                     data-bs-slide="prev"
                     tabindex="0"
+                    aria-label="Slide anterior"
                   >
                     <span
                       class="carousel-control-prev-icon"
@@ -223,6 +235,7 @@
                     data-bs-target="#carouselExemplo"
                     data-bs-slide="next"
                     tabindex="0"
+                    aria-label="Próximo slide"
                   >
                     <span
                       class="carousel-control-next-icon"
@@ -233,165 +246,87 @@
                 </div>
               </div>
               <figcaption tabindex="0">
-                Lorem ipsum dolor sit amet (2021)
+                Recursos de acessibilidade ao computador
               </figcaption>
             </div>
 
             <div class="texto-seccaoDois">
               <p tabindex="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                A primeira imagem é um mouse alterado. A esfera, que fica
+                embaixo do mouse convencional, foi movida para a parte superior
+                de seu corpo permitindo que a movimentação seja feita pelo
+                movimento dos dedos do usuário.
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="conteudo">
-          <div class="card-dois">
-            <div class="texto-seccaoDois">
               <p tabindex="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                A segunda imagem é uma Órtese, um equipamento com o objetivo de
+                obter melhor posicionamento e facilitar a função do membro.
               </p>
-            </div>
-
-            <div class="imagem-seccaoDois">
-              <div class="container" style="width: 20rem">
-                <div
-                  id="carouselExemplo2"
-                  class="carousel slide"
-                  aria-roledescription="carrossel"
-                  aria-label="Mais imagens de demonstração"
-                >
-                  <div class="carousel-indicators">
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExemplo2"
-                      data-bs-slide-to="0"
-                      class="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                      tabindex="0"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExemplo2"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                      tabindex="0"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExemplo2"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                      tabindex="0"
-                    ></button>
-                  </div>
-                  <div class="carousel-inner" style="height: 20rem">
-                    <div class="carousel-item active" aria-live="polite">
-                      <img
-                        src="img/img_baixa_fidelidade.png"
-                        class="d-block w-100"
-                        alt="Lorem ipsum"
-                      />
-                    </div>
-                    <div class="carousel-item" aria-live="polite">
-                      <img
-                        src="img/img_baixa_fidelidade.png"
-                        class="d-block w-100"
-                        alt="Lorem ipsum"
-                      />
-                    </div>
-                    <div class="carousel-item" aria-live="polite">
-                      <img
-                        src="img/img_baixa_fidelidade.png"
-                        class="d-block w-100"
-                        alt="Lorem ipsum"
-                      />
-                    </div>
-                  </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExemplo2"
-                    data-bs-slide="prev"
-                    tabindex="0"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExemplo2"
-                    data-bs-slide="next"
-                    tabindex="0"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Próximo</span>
-                  </button>
-                </div>
-              </div>
-              <figcaption tabindex="0">
-                Lorem ipsum dolor sit amet (2022) Lorem ipsum: Dolor sit amet
-              </figcaption>
+              <p tabindex="0">
+                A terceira imagem é um leitor de tela, um programa que captura
+                toda e qualquer informação apresentada na forma de texto e a
+                transforma em uma resposta falada. Na imagem temos o logotipo da
+                Jaws, mas há outros programas como VirtualVision e DosVox.
+              </p>
+              <p tabindex="0">
+                A quarta imagem se trata da ampliação das letras e números do
+                teclado, auxiliando o usuário a localizar as teclas com maior
+                facilidade.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!--section seccaoTres-->
-      <section
-        id="seccaoTres"
-        role="region"
-        aria-labelledby="titulo-seccaoTres"
-      >
+      <div class="seccao" id="seccaoTres" class="faixa-seccaoTres"></div>
+      <section role="region" aria-labelledby="titulo-seccaoTres">
         <div class="conteudo">
           <div class="container-seccaoTres">
             <div class="informacoes-seccaoTres">
               <h2 class="titulo-seccaoTres" id="titulo-seccaoTres" tabindex="0">
-                LOREM IPSUM
+                WCAG
               </h2>
-              <h3 class="subtitulo-seccaoTres" tabindex="0">Dolor sit amet</h3>
+              <h3 class="subtitulo-seccaoTres" tabindex="0">
+                Diretrizes de acessibilidade
+              </h3>
               <p tabindex="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                É importante que o site possua um contraste de cores entre o
+                texto e plano de fundo, sem imagens atrás do texto, pois pode
+                atrapalhar a leitura. Com contraste mínimo de 4,5:1. Lembrando
+                que o uso excessivo de contraste pode atrapalhar o entendimento.
+                Sem elementos cintilantes ou piscantes. Importante que o título
+                seja bem descritivo e explicativo sobre do que se trata a
+                página. Todas as imagens precisam ter um texto alternativo.
               </p>
-              <!-- Botão adicionado -->
-              <div class="botao-container">
-                <button class="botao-seccaoTres" tabindex="0">
-                  Lorem Ipsum
-                </button>
+              <div class="btn-seccaoTres">
+                <a
+                  href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
+                  class="btn-saibaMais"
+                  tabindex="0"
+                  aria-label="Saiba mais sobre diretrizes WCAG"
+                  target="_blank"
+                >
+                  Saiba mais
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!--section seccaoQuatro - Formulário de Contato-->
-      <section id="seccaoQuatro" role="region" aria-labelledby="titulo-form">
+      <!-- section seccaoQuatro - Formulário de Contato  -->
+      <div class="seccao" id="seccaoQuatro"></div>
+      <section role="region" aria-labelledby="titulo-form">
         <div class="conteudo">
           <div class="container-form">
             <h2 class="titulo-form" id="titulo-form" tabindex="0">
               Entre em Contato
             </h2>
-            <form class="formulario-contato" role="form">
+            <form
+              class="formulario-contato"
+              role="form"
+              aria-labelledby="titulo-form"
+            >
               <div class="campo-form">
                 <label for="nome">Nome:</label>
                 <input
@@ -402,7 +337,11 @@
                   required
                   tabindex="0"
                   aria-required="true"
+                  aria-describedby="nome-desc"
                 />
+                <div id="nome-desc" class="sr-only">
+                  Informe seu nome completo
+                </div>
               </div>
 
               <div class="campo-form">
@@ -415,7 +354,11 @@
                   required
                   tabindex="0"
                   aria-required="true"
+                  aria-describedby="email-desc"
                 />
+                <div id="email-desc" class="sr-only">
+                  Informe um email válido para contato
+                </div>
               </div>
 
               <div class="campo-form">
@@ -428,14 +371,28 @@
                   required
                   tabindex="0"
                   aria-required="true"
+                  aria-describedby="mensagem-desc"
                 ></textarea>
+                <div id="mensagem-desc" class="sr-only">
+                  Escreva sua dúvida ou comentário
+                </div>
               </div>
 
               <div class="botoes-form">
-                <button type="submit" class="btn-enviar" tabindex="0">
+                <button
+                  type="submit"
+                  class="btn-enviar"
+                  tabindex="0"
+                  aria-label="Enviar formulário"
+                >
                   Enviar
                 </button>
-                <button type="reset" class="btn-limpar" tabindex="0">
+                <button
+                  type="reset"
+                  class="btn-limpar"
+                  tabindex="0"
+                  aria-label="Limpar todos os campos do formulário"
+                >
                   Limpar
                 </button>
               </div>
@@ -452,7 +409,7 @@
           tabindex="0"
           aria-label="Voltar ao topo da página"
         >
-          <i class="fa-solid fa-arrow-up"></i>
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
           Voltar ao começo da página
         </a>
       </div>
@@ -463,30 +420,47 @@
           <div class="footer-container">
             <div class="footer-logo">
               <img
-                src="img/img_baixa_fidelidade.png"
+                src="img/simbolo_acessibilidade.png"
                 id="logo"
-                alt="Logo no rodapé"
+                alt="Símbolo internacional de acessibilidade - Pessoa em cadeira de rodas em fundo azul"
                 tabindex="0"
               />
             </div>
             <div class="footer-content">
               <p tabindex="0">
-                Lorem ipsum dolor sit amet
-                <span class="destaque">consectetur adipiscing</span> elit sed do
-                eiusmod
+                Seguindo essas dicas você também
+                <span class="destaque">pode criar um site web acessível</span>
               </p>
               <div class="lista-links">
-                <p tabindex="0">Lorem Ipsum</p>
+                <p tabindex="0">IFBA campus Feira de Santana</p>
                 <div
                   class="links-row"
                   role="navigation"
                   aria-label="Links de rodapé"
                 >
-                  <a href="#" target="_blank" tabindex="0">Lorem</a>
+                  <a
+                    href="https://portal.ifba.edu.br/"
+                    target="_blank"
+                    tabindex="0"
+                    aria-label="Site oficial do IFBA"
+                    >Portal IFBA</a
+                  >
                   <span class="separator" aria-hidden="true">|</span>
-                  <a href="#" target="_blank" tabindex="0">Ipsum</a>
+                  <a
+                    href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
+                    target="_blank"
+                    tabindex="0"
+                    aria-label="Diretrizes de Acessibilidade WCAG"
+                    >WCAG em Português</a
+                  >
                   <span class="separator" aria-hidden="true">|</span>
-                  <a href="#" target="_blank" tabindex="0">Dolor</a>
+                  <a
+                    href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
+                    target="_blank"
+                    tabindex="0"
+                    aria-label="Portal de acessibilidade digital do governo"
+                    >Acessibilidade Digital</a
+                  >
                 </div>
               </div>
               <div
@@ -494,17 +468,37 @@
                 role="navigation"
                 aria-label="Redes sociais"
               >
-                <a href="#" target="_blank" tabindex="0" aria-label="Instagram">
-                  <i class="fa-brands fa-instagram"></i>
+                <a
+                  href="#"
+                  target="_blank"
+                  tabindex="0"
+                  aria-label="Siga o IFBA no Instagram"
+                >
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="#" target="_blank" tabindex="0" aria-label="GitHub">
-                  <i class="fa-brands fa-github"></i>
+                <a
+                  href="#"
+                  target="_blank"
+                  tabindex="0"
+                  aria-label="Repositório de códigos no GitHub"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
                 </a>
-                <a href="#" target="_blank" tabindex="0" aria-label="Facebook">
-                  <i class="fa-brands fa-facebook"></i>
+                <a
+                  href="#"
+                  target="_blank"
+                  tabindex="0"
+                  aria-label="Página do IFBA no Facebook"
+                >
+                  <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 </a>
-                <a href="#" target="_blank" tabindex="0" aria-label="Twitter">
-                  <i class="fa-brands fa-twitter"></i>
+                <a
+                  href="#"
+                  target="_blank"
+                  tabindex="0"
+                  aria-label="Perfil do IFBA no Twitter"
+                >
+                  <i class="fa-brands fa-twitter" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -519,153 +513,4 @@
     crossorigin="anonymous"
   ></script>
   <script src="js/accessibility.js"></script>
-  <script>
-    // Script para navegação com teclas de seta
-    document.addEventListener("DOMContentLoaded", function () {
-      // Pegar todos os elementos com tabindex
-      const focusableElements = Array.from(
-        document.querySelectorAll('[tabindex="0"]')
-      );
-
-      // Função para navegar com teclas de seta
-      document.addEventListener("keydown", function (e) {
-        const activeElement = document.activeElement;
-        const currentIndex = focusableElements.indexOf(activeElement);
-
-        if (currentIndex !== -1) {
-          let nextIndex;
-
-          // Navegar com teclas de seta
-          switch (e.key) {
-            case "ArrowRight":
-              nextIndex = (currentIndex + 1) % focusableElements.length;
-              e.preventDefault();
-              focusableElements[nextIndex].focus();
-              break;
-            case "ArrowLeft":
-              nextIndex =
-                (currentIndex - 1 + focusableElements.length) %
-                focusableElements.length;
-              e.preventDefault();
-              focusableElements[nextIndex].focus();
-              break;
-            case "ArrowDown":
-              // Encontrar o próximo elemento na mesma coluna ou avançar para o próximo item
-              nextIndex = (currentIndex + 1) % focusableElements.length;
-              e.preventDefault();
-              focusableElements[nextIndex].focus();
-              break;
-            case "ArrowUp":
-              // Encontrar o elemento anterior na mesma coluna ou voltar para o item anterior
-              nextIndex =
-                (currentIndex - 1 + focusableElements.length) %
-                focusableElements.length;
-              e.preventDefault();
-              focusableElements[nextIndex].focus();
-              break;
-            case "Enter":
-              // Ativar o elemento atual (simular clique)
-              if (
-                activeElement.tagName === "A" ||
-                activeElement.tagName === "BUTTON"
-              ) {
-                e.preventDefault();
-                activeElement.click();
-              } else if (
-                activeElement.tagName === "INPUT" ||
-                activeElement.tagName === "TEXTAREA"
-              ) {
-                // Não fazer nada especial para campos de entrada
-              } else {
-                // Para outros elementos, verificar se têm evento de clique
-                e.preventDefault();
-                activeElement.click();
-              }
-              break;
-          }
-        }
-      });
-
-      // Gerenciar a navegação nos carrosséis
-      const carousels = document.querySelectorAll(".carousel");
-      carousels.forEach(function (carousel) {
-        const prevButton = carousel.querySelector(".carousel-control-prev");
-        const nextButton = carousel.querySelector(".carousel-control-next");
-
-        carousel.addEventListener("keydown", function (e) {
-          if (e.key === "ArrowLeft") {
-            e.preventDefault();
-            prevButton.click();
-          } else if (e.key === "ArrowRight") {
-            e.preventDefault();
-            nextButton.click();
-          }
-        });
-      });
-
-      // Melhorar acessibilidade do formulário
-      const form = document.querySelector(".formulario-contato");
-      if (form) {
-        form.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
-            const inputs = Array.from(
-              form.querySelectorAll("input, textarea, button")
-            );
-            const currentIndex = inputs.indexOf(e.target);
-            if (currentIndex !== -1 && currentIndex < inputs.length - 1) {
-              e.preventDefault();
-              inputs[currentIndex + 1].focus();
-            }
-          }
-        });
-      }
-
-      // Definir o primeiro elemento focável como foco inicial da página
-      if (focusableElements.length > 0) {
-        window.addEventListener("load", function () {
-          // Foca no primeiro elemento de navegação que é um link de menu
-          const navLinks = document.querySelectorAll("nav.navegacao a");
-          if (navLinks.length > 0) {
-            navLinks[0].focus();
-          } else {
-            focusableElements[0].focus();
-          }
-        });
-      }
-    });
-
-    // Manter o atributo aria-current atualizado conforme a navegação
-    document.addEventListener("DOMContentLoaded", function () {
-      const navLinks = document.querySelectorAll("nav.navegacao a");
-
-      // Atualizar aria-current baseado na URL atual
-      function updateAriaCurrent() {
-        const currentHash = window.location.hash || "#seccaoUm";
-
-        navLinks.forEach(function (link) {
-          if (link.getAttribute("href") === currentHash) {
-            link.setAttribute("aria-current", "page");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-      }
-
-      // Atualizar quando a URL muda
-      window.addEventListener("hashchange", updateAriaCurrent);
-
-      // Atualizar ao carregar a página
-      updateAriaCurrent();
-
-      // Adicionar evento de clique para os links de navegação
-      navLinks.forEach(function (link) {
-        link.addEventListener("click", function () {
-          navLinks.forEach(function (l) {
-            l.removeAttribute("aria-current");
-          });
-          this.setAttribute("aria-current", "page");
-        });
-      });
-    });
-  </script>
 </html>
