@@ -15,6 +15,8 @@ git clone https://github.com/diogomasc/OficinaWebAcessivel.git
 cd OficinaWebAcessivel
 ```
 
+### Teste o site em: https://diogomasc.github.io/OficinaWebAcessivel/
+
 ### Guia de Materiais
 
 1. Leia o [Desenvolvendo com Inclusão](Desenvolvendo_com_Inclusão.md) para entender os conceitos teóricos e a importância da acessibilidade web.
