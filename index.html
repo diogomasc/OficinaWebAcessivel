@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <!-- Atributo lang informando idioma da página para leitores de tela -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta description para melhorar acessibilidade e SEO -->
     <meta
       name="description"
       content="Oficina sobre acessibilidade web e recursos para inclusão digital no IFBA campus Feira de Santana"
     />
     <title>Oficina de Acessibilidade Web - IFBA</title>
+    <!-- Título descritivo da página -->
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -24,21 +27,25 @@
     <link rel="icon" href="img/simbolo_acessibilidade.png" type="image/png" />
   </head>
   <body>
-    <!-- Adicionei skip link para permitir que usuários de teclado pulem direto para o conteúdo principal mas por alguma razao o header está sobre ele -->
+    <!-- ACESSIBILIDADE: Skip link para permitir que usuários de teclado pulem direto para o conteúdo principal -->
     <!-- <a href="#conteudo-principal" class="skip-link" tabindex="0"
       >Pular para o conteúdo principal</a
     > -->
 
+    <!-- ACESSIBILIDADE: Uso de role="banner" para demarcar o cabeçalho principal da página -->
     <header class="sombra" role="banner">
       <div class="container-header">
         <div class="logo-container">
+          <!-- ACESSIBILIDADE: Uso de alt descritivo e tabindex para permitir foco via teclado -->
           <img
             src="img/simbolo_acessibilidade.png"
             alt="Símbolo internacional de acessibilidade - Pessoa em cadeira de rodas em fundo azul"
             tabindex="0"
           />
         </div>
+        <!-- ACESSIBILIDADE: Uso de roles semânticos para navegação e aria-label para descrever o propósito -->
         <nav role="navigation" aria-label="Navegação principal">
+          <!-- ACESSIBILIDADE: Uso de aria-current para indicar página atual -->
           <a href="#seccaoUm" tabindex="0" aria-current="page"
             ><h5 class="texto-secundario">Introdução</h5></a
           >
@@ -53,17 +60,20 @@
             ><h5 class="texto-secundario">Contato</h5></a
           >
         </nav>
+        <!-- ACESSIBILIDADE: Uso de role="group" e aria-label para agrupar controles relacionados -->
         <div
           class="botoes-acessibilidade"
           role="group"
           aria-label="Controles de acessibilidade"
         >
+          <!-- ACESSIBILIDADE: Botões com aria-label descritivo e tabindex para acesso via teclado -->
           <button
             class="btn-acessibilidade"
             onclick="increaseFontSize()"
             aria-label="Aumentar tamanho da fonte (torna o texto maior)"
             tabindex="0"
           >
+            <!-- ACESSIBILIDADE: Uso de aria-hidden para ícones decorativos -->
             <i class="fas fa-text-height" aria-hidden="true"></i>
           </button>
           <button
@@ -86,22 +96,28 @@
       </div>
     </header>
 
+    <!-- ACESSIBILIDADE: Uso de role="main" para identificar o conteúdo principal -->
     <main id="conteudo-principal" role="main">
       <!--section seccaoUm-->
+      <!-- ACESSIBILIDADE: ID para ancoragem e para associar com rótulos -->
       <div class="seccao" id="seccaoUm"></div>
+      <!-- ACESSIBILIDADE: Uso de role="region" e aria-labelledby para demarcar seções e associar com seus títulos -->
       <section role="region" aria-labelledby="titulo-seccaoUm">
+        <!-- ACESSIBILIDADE: Uso de heading semântico com ID para referência e tabindex para foco -->
         <h1 class="titulo-seccaoUm" id="titulo-seccaoUm" tabindex="0">
           Um site Web acessível
         </h1>
         <div class="conteudo">
           <div class="container-texto">
             <div class="texto-caixaUm">
+              <!-- ACESSIBILIDADE: Hierarquia de cabeçalhos adequada (h1, h2, etc.) -->
               <h2 class="titulo-caixaUm" id="titulo-caixaUm" tabindex="0">
                 <strong
                   >A tecnologia a favor da acessibilidade e inclusão</strong
                 >
                 <span class="destaque"></span>
               </h2>
+              <!-- ACESSIBILIDADE: tabindex para permitir navegação sequencial pelo teclado -->
               <p tabindex="0">
                 As pessoas com deficiência sofrem com espaços que não são
                 pensados para eles, enfrentam diversas barreiras em diferentes
@@ -144,6 +160,7 @@
           <div class="card-um">
             <div class="imagem-seccaoDois">
               <div class="container" style="width: 20rem">
+                <!-- ACESSIBILIDADE: Carrossel com atributos ARIA para descrever seu papel e propósito -->
                 <div
                   id="carouselExemplo"
                   class="carousel slide"
@@ -153,6 +170,7 @@
                   data-bs-pause="hover"
                 >
                   <div class="carousel-indicators">
+                    <!-- ACESSIBILIDADE: Botões de carrossel com atributos aria para controle e indicação -->
                     <button
                       type="button"
                       data-bs-target="#carouselExemplo"
@@ -185,8 +203,9 @@
                     ></button>
                   </div>
                   <div class="carousel-inner" style="height: 20rem">
-                    <!-- Comentário: Melhorei as descrições alt das imagens para torná-las mais informativas -->
+                    <!-- ACESSIBILIDADE: Uso de aria-live para anunciar mudanças de conteúdo dinâmico -->
                     <div class="carousel-item active" aria-live="polite">
+                      <!-- ACESSIBILIDADE: Textos alternativos detalhados para imagens -->
                       <img
                         src="img/mouse_alternativo.png"
                         class="d-block w-100"
@@ -215,6 +234,7 @@
                       />
                     </div>
                   </div>
+                  <!-- ACESSIBILIDADE: Controles de carrossel com rótulos e texto visualmente oculto -->
                   <button
                     class="carousel-control-prev"
                     type="button"
@@ -227,6 +247,7 @@
                       class="carousel-control-prev-icon"
                       aria-hidden="true"
                     ></span>
+                    <!-- ACESSIBILIDADE: Classe visually-hidden mantém texto para leitores de tela -->
                     <span class="visually-hidden">Anterior</span>
                   </button>
                   <button
@@ -245,6 +266,7 @@
                   </button>
                 </div>
               </div>
+              <!-- ACESSIBILIDADE: Legenda para as imagens como contexto adicional -->
               <figcaption tabindex="0">
                 Recursos de acessibilidade ao computador
               </figcaption>
@@ -283,8 +305,9 @@
         <div class="conteudo">
           <div class="container-seccaoTres">
             <div class="informacoes-seccaoTres">
+              <!-- ACESSIBILIDADE: Uso do atributo lang para conteúdo em outros idiomas -->
               <h2 class="titulo-seccaoTres" id="titulo-seccaoTres" tabindex="0">
-                WCAG
+                <span lang="en">WCAG</span>
               </h2>
               <h3 class="subtitulo-seccaoTres" tabindex="0">
                 Diretrizes de acessibilidade
@@ -299,6 +322,7 @@
                 página. Todas as imagens precisam ter um texto alternativo.
               </p>
               <div class="btn-seccaoTres">
+                <!-- ACESSIBILIDADE: Links externos com aria-label descritivo e target="_blank" -->
                 <a
                   href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
                   class="btn-saibaMais"
@@ -306,7 +330,7 @@
                   aria-label="Saiba mais sobre diretrizes WCAG"
                   target="_blank"
                 >
-                  Saiba mais
+                  Visite o site do W3C sobre WCAG 2.1
                 </a>
               </div>
             </div>
@@ -316,19 +340,23 @@
 
       <!-- section seccaoQuatro - Formulário de Contato  -->
       <div class="seccao" id="seccaoQuatro"></div>
+      <!-- ACESSIBILIDADE: Seção com role e aria-labelledby para associar com seu título -->
       <section role="region" aria-labelledby="titulo-form">
         <div class="conteudo">
           <div class="container-form">
             <h2 class="titulo-form" id="titulo-form" tabindex="0">
               Entre em Contato
             </h2>
+            <!-- ACESSIBILIDADE: Formulário com role e aria-labelledby -->
             <form
               class="formulario-contato"
               role="form"
               aria-labelledby="titulo-form"
             >
               <div class="campo-form">
+                <!-- ACESSIBILIDADE: Label associado ao input através do atributo for -->
                 <label for="nome">Nome:</label>
+                <!-- ACESSIBILIDADE: Input com atributos de acessibilidade -->
                 <input
                   type="text"
                   id="nome"
@@ -339,6 +367,7 @@
                   aria-required="true"
                   aria-describedby="nome-desc"
                 />
+                <!-- ACESSIBILIDADE: Descrição adicional para o campo, visível apenas para leitores de tela -->
                 <div id="nome-desc" class="sr-only">
                   Informe seu nome completo
                 </div>
@@ -379,6 +408,7 @@
               </div>
 
               <div class="botoes-form">
+                <!-- ACESSIBILIDADE: Botões com rótulos claros e acesso via teclado -->
                 <button
                   type="submit"
                   class="btn-enviar"
@@ -403,6 +433,7 @@
 
       <!-- Botão Voltar ao Topo -->
       <div class="voltar-topo">
+        <!-- ACESSIBILIDADE: Link "Voltar ao topo" com aria-label descritivo -->
         <a
           href="#"
           class="btn-topo"
@@ -416,6 +447,7 @@
 
       <!--Rodapé -->
       <section id="footer">
+        <!-- ACESSIBILIDADE: Rodapé com role="contentinfo" para indicar informações de rodapé -->
         <footer class="rodape" role="contentinfo">
           <div class="footer-container">
             <div class="footer-logo">
@@ -433,6 +465,7 @@
               </p>
               <div class="lista-links">
                 <p tabindex="0">IFBA campus Feira de Santana</p>
+                <!-- ACESSIBILIDADE: Navegação de rodapé com role e aria-label -->
                 <div
                   class="links-row"
                   role="navigation"
@@ -445,6 +478,7 @@
                     aria-label="Site oficial do IFBA"
                     >Portal IFBA</a
                   >
+                  <!-- ACESSIBILIDADE: Separadores visuais ocultados para leitores de tela -->
                   <span class="separator" aria-hidden="true">|</span>
                   <a
                     href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
@@ -463,6 +497,7 @@
                   >
                 </div>
               </div>
+              <!-- ACESSIBILIDADE: Links de redes sociais com role e aria-label -->
               <div
                 class="social-links"
                 role="navigation"
@@ -507,10 +542,12 @@
       </section>
     </main>
   </body>
+  <!-- ACESSIBILIDADE: Scripts carregados no final para não bloquear o carregamento da página -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"
   ></script>
+  <!-- ACESSIBILIDADE: Script para recursos de acessibilidade personalizados -->
   <script src="js/accessibility.js"></script>
 </html>

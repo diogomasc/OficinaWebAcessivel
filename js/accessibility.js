@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .carousel-control-prev:focus,
     .carousel-control-next:focus,
     .btn-acessibilidade:focus,
-    .botao-seccaoTres:focus,
     .btn-topo:focus {
       background-color: var(--quaternaria) !important;
       color: var(--branco) !important;
@@ -113,8 +112,21 @@ document.addEventListener("DOMContentLoaded", function () {
       transition: all 0.2s ease;
     }
     
+    /* Estilo específico para o botão Saiba Mais */
+    a.btn-saibaMais:focus {
+      background-color: var(--branco) !important;
+      color: var(--quaternaria) !important;
+      transform: scale(1.05) !important;
+      outline: 3px solid var(--terciaria) !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 8px rgba(138, 179, 207, 0.8) !important;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+    
     /* Estilo de foco para links de navegação */
-    nav.navegacao a:focus h5 {
+    nav a:focus h5 {
       color: var(--branco) !important;
       background-color: var(--quaternaria) !important;
       transform: translateY(-2px);
@@ -139,8 +151,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Coleta todos os elementos focáveis para navegação por teclado
   const focusableElements = Array.from(
-    document.querySelectorAll('[tabindex="0"]')
-  );
+    document.querySelectorAll(
+      'a[href], button, input, textarea, select, [tabindex="0"]'
+    )
+  ).filter((el) => el.offsetWidth > 0 || el.offsetHeight > 0); // Filtra elementos visíveis
+
+  // Tratamento específico para o botão "Saiba Mais"
+  const saibaMaisBtn = document.querySelector(".btn-saibaMais");
+  if (saibaMaisBtn) {
+    // Garante que o botão "Saiba Mais" seja focável mesmo que não esteja na lista
+    if (!focusableElements.includes(saibaMaisBtn)) {
+      focusableElements.push(saibaMaisBtn);
+    }
+
+    // Adiciona manipulador de eventos específico para garantir que o Enter funcione
+    saibaMaisBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  }
 
   /**
    * Adiciona suporte para navegação por teclado personalizada
@@ -280,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   if (focusableElements.length > 0) {
     window.addEventListener("load", function () {
-      const navLinks = document.querySelectorAll("nav.navegacao a");
+      const navLinks = document.querySelectorAll("nav a");
       if (navLinks.length > 0) {
         // Se houver links de navegação, foca no primeiro
         navLinks[0].focus();
@@ -297,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Atualiza o atributo aria-current para indicar a seção atual da página
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll("nav.navegacao a");
+  const navLinks = document.querySelectorAll("nav a");
 
   /**
    * Atualiza o atributo aria-current com base na URL atual
@@ -337,4 +368,35 @@ document.addEventListener("DOMContentLoaded", function () {
       this.setAttribute("aria-current", "page");
     });
   });
+
+  // Implementação específica para o botão "Saiba Mais"
+  const saibaMaisBtn = document.querySelector(".btn-saibaMais");
+  if (saibaMaisBtn) {
+    // Corrige qualquer problema de evento ou foco
+    saibaMaisBtn.addEventListener("focus", function () {
+      // Garante que o elemento receba foco visual adequado
+      this.style.position = "relative";
+      this.style.zIndex = "100";
+    });
+
+    saibaMaisBtn.addEventListener("blur", function () {
+      // Restaura valores padrão ao perder o foco
+      this.style.position = "";
+      this.style.zIndex = "";
+    });
+  }
+
+  // Garantir foco adequado em todos os elementos
+  document
+    .querySelectorAll('a[href], button, [tabindex="0"]')
+    .forEach(function (el) {
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          if (this.tagName === "A" || this.tagName === "BUTTON") {
+            e.preventDefault();
+            this.click();
+          }
+        }
+      });
+    });
 });

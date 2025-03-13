@@ -1,25 +1,37 @@
-# OficinaWebAcessivel
+# Oficina de Acessibilidade Web: Desenvolvendo com Inclusão
 
+<p align="center">
+  <img src="img/simbolo_acessibilidade.png" width="50" alt="Símbolo de Acessibilidade">
+</p>
 
-## 🛠️ Clonar o Repositório
+Este repositório contém os materiais da oficina prática sobre acessibilidade web, focada em ensinar desenvolvedores a criar websites mais inclusivos através do HTML, CSS e JS.
+
+## Como Usar
+
+### Clonando o Repositório
 
 ```bash
 git clone https://github.com/diogomasc/OficinaWebAcessivel.git
 cd OficinaWebAcessivel
 ```
 
-## 📂 Estrutura do Projeto
+### Guia de Materiais
 
-```
-oficina-web/
-├── css/
-│   └── style.css          # Estilos principais do site
-├── img/                   # Pasta para imagens
-├── js/
-│   └── accessibility.js   # Scripts de acessibilidade
-├── index.html             # Página principal
-└── README.md              # Este arquivo
-```
+1. Leia o [Desenvolvendo com Inclusão](Desenvolvendo_com_Inclusão.md) para entender os conceitos teóricos e a importância da acessibilidade web.
 
-![FireShot Capture 001 - Oficina Web -  127 0 0 1](https://github.com/user-attachments/assets/25c86af9-9717-4a0d-952e-bc5946ddc28f)
-![FireShot Capture 002 - Oficina Web -  127 0 0 1](https://github.com/user-attachments/assets/40cf3ded-4ea8-49e3-ae52-e1f9bbecd8e8)
+2. Leia o [Roteiro](Resumo_Roteiro.md) para ver exemplos práticos de código acessível vs. inacessível, com explicações técnicas.
+
+## Ferramentas Recomendadas
+
+Para testar a acessibilidade do seu site durante a oficina, recomendamos:
+
+- **Validadores Automáticos**:
+
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse) (integrado ao Chrome DevTools)
+  - [axe DevTools](https://www.deque.com/axe/) (extensão para navegadores)
+  - [Wave](https://wave.webaim.org/) (ferramenta online e extensão)
+
+- **Para Testes Manuais**:
+  - Navegação por teclado (teste usando Tab, Shift+Tab, Enter)
+  - Leitores de tela: [NVDA](https://www.nvaccess.org/) (Windows), VoiceOver (macOS)
+  - [Color Contrast Analyzer](https://developer.paciellogroup.com/resources/contrastanalyser/)
