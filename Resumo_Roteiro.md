@@ -51,7 +51,7 @@
 <div id="nome-desc" class="sr-only">Informe seu nome completo</div>
 ```
 
-- **Explicação técnica**: O elemento `<label>` associado ao input cria uma conexão explícita, melhorando a acessibilidade
+- **Explicação técnica**: O elemento `<label>` associado ao input cria uma conexão explícita, melhorando a acessibilidade. E o `<aria-describedby>` é usado para associar um elemento a outro que fornece informações adicionais, melhorando a acessibilidade. Ele é útil para complementar a descrição de um campo de entrada (<input>) com mensagens de ajuda ou feedback dinâmico. Isso permite que leitores de tela anunciem automaticamente a informação extra ao usuário.
 
 ## 4. Elementos Interativos
 
