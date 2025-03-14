@@ -28,12 +28,10 @@
   </head>
   <body>
     <!-- ACESSIBILIDADE: Skip link para permitir que usuários de teclado pulem direto para o conteúdo principal -->
-    <!-- <a href="#conteudo-principal" class="skip-link" tabindex="0"
+    <a href="#conteudo-principal" class="skip-link" tabindex="0"
       >Pular para o conteúdo principal</a
-    > -->
-
-    <!-- ACESSIBILIDADE: Uso de role="banner" para demarcar o cabeçalho principal da página -->
-    <header class="sombra" role="banner">
+    >
+    <header class="sombra">
       <div class="container-header">
         <div class="logo-container">
           <!-- ACESSIBILIDADE: Uso de alt descritivo e tabindex para permitir foco via teclado -->
@@ -300,14 +298,16 @@
       </section>
 
       <!--section seccaoTres-->
-      <div class="seccao" id="seccaoTres" class="faixa-seccaoTres"></div>
+      <div class="seccao" id="seccaoTres"></div>
       <section role="region" aria-labelledby="titulo-seccaoTres">
         <div class="conteudo">
           <div class="container-seccaoTres">
             <div class="informacoes-seccaoTres">
               <!-- ACESSIBILIDADE: Uso do atributo lang para conteúdo em outros idiomas -->
               <h2 class="titulo-seccaoTres" id="titulo-seccaoTres" tabindex="0">
-                <span lang="en">WCAG</span>
+                <span lang="en"
+                  >WCAG - Web Content Accessibility Guidelines</span
+                >
               </h2>
               <h3 class="subtitulo-seccaoTres" tabindex="0">
                 Diretrizes de acessibilidade
@@ -327,8 +327,9 @@
                   href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
                   class="btn-saibaMais"
                   tabindex="0"
-                  aria-label="Saiba mais sobre diretrizes WCAG"
+                  aria-label="Acessar diretrizes WCAG 2.1 em português no site do W3C"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Visite o site do W3C sobre WCAG 2.1
                 </a>
@@ -353,59 +354,62 @@
               role="form"
               aria-labelledby="titulo-form"
             >
-              <div class="campo-form">
-                <!-- ACESSIBILIDADE: Label associado ao input através do atributo for -->
-                <label for="nome">Nome:</label>
-                <!-- ACESSIBILIDADE: Input com atributos de acessibilidade -->
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Digite seu nome"
-                  required
-                  tabindex="0"
-                  aria-required="true"
-                  aria-describedby="nome-desc"
-                />
-                <!-- ACESSIBILIDADE: Descrição adicional para o campo, visível apenas para leitores de tela -->
-                <div id="nome-desc" class="sr-only">
-                  Informe seu nome completo
+              <fieldset>
+                <legend>Informações de contato</legend>
+                <div class="campo-form">
+                  <!-- ACESSIBILIDADE: Label associado ao input através do atributo for -->
+                  <label for="nome">Nome:</label>
+                  <!-- ACESSIBILIDADE: Input com atributos de acessibilidade -->
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                    tabindex="0"
+                    aria-required="true"
+                    aria-describedby="nome-desc"
+                  />
+                  <!-- ACESSIBILIDADE: Descrição adicional para o campo, visível apenas para leitores de tela -->
+                  <div id="nome-desc" class="sr-only">
+                    Informe seu nome completo
+                  </div>
                 </div>
-              </div>
 
-              <div class="campo-form">
-                <label for="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Digite seu email"
-                  required
-                  tabindex="0"
-                  aria-required="true"
-                  aria-describedby="email-desc"
-                />
-                <div id="email-desc" class="sr-only">
-                  Informe um email válido para contato
+                <div class="campo-form">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu email"
+                    required
+                    tabindex="0"
+                    aria-required="true"
+                    aria-describedby="email-desc"
+                  />
+                  <div id="email-desc" class="sr-only">
+                    Informe um email válido para contato
+                  </div>
                 </div>
-              </div>
 
-              <div class="campo-form">
-                <label for="mensagem">Mensagem:</label>
-                <textarea
-                  id="mensagem"
-                  name="mensagem"
-                  rows="5"
-                  placeholder="Digite sua mensagem"
-                  required
-                  tabindex="0"
-                  aria-required="true"
-                  aria-describedby="mensagem-desc"
-                ></textarea>
-                <div id="mensagem-desc" class="sr-only">
-                  Escreva sua dúvida ou comentário
+                <div class="campo-form">
+                  <label for="mensagem">Mensagem:</label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="5"
+                    placeholder="Digite sua mensagem"
+                    required
+                    tabindex="0"
+                    aria-required="true"
+                    aria-describedby="mensagem-desc"
+                  ></textarea>
+                  <div id="mensagem-desc" class="sr-only">
+                    Escreva sua dúvida ou comentário
+                  </div>
                 </div>
-              </div>
+              </fieldset>
 
               <div class="botoes-form">
                 <!-- ACESSIBILIDADE: Botões com rótulos claros e acesso via teclado -->
@@ -475,16 +479,17 @@
                     href="https://portal.ifba.edu.br/"
                     target="_blank"
                     tabindex="0"
-                    aria-label="Site oficial do IFBA"
+                    aria-label="Visitar o site oficial do IFBA"
+                    rel="noopener noreferrer"
                     >Portal IFBA</a
                   >
-                  <!-- ACESSIBILIDADE: Separadores visuais ocultados para leitores de tela -->
                   <span class="separator" aria-hidden="true">|</span>
                   <a
                     href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
                     target="_blank"
                     tabindex="0"
-                    aria-label="Diretrizes de Acessibilidade WCAG"
+                    aria-label="Consultar as diretrizes de Acessibilidade WCAG em português"
+                    rel="noopener noreferrer"
                     >WCAG em Português</a
                   >
                   <span class="separator" aria-hidden="true">|</span>
@@ -492,7 +497,8 @@
                     href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
                     target="_blank"
                     tabindex="0"
-                    aria-label="Portal de acessibilidade digital do governo"
+                    aria-label="Visitar o portal de acessibilidade digital do governo brasileiro"
+                    rel="noopener noreferrer"
                     >Acessibilidade Digital</a
                   >
                 </div>
@@ -503,36 +509,24 @@
                 role="navigation"
                 aria-label="Redes sociais"
               >
-                <a
-                  href="#"
-                  target="_blank"
-                  tabindex="0"
-                  aria-label="Siga o IFBA no Instagram"
-                >
+                <a href="#" tabindex="0" aria-label="Siga o IFBA no Instagram">
                   <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
                 <a
                   href="#"
-                  target="_blank"
                   tabindex="0"
-                  aria-label="Repositório de códigos no GitHub"
+                  aria-label="Acesse o repositório de códigos do IFBA no GitHub"
                 >
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                 </a>
                 <a
                   href="#"
-                  target="_blank"
                   tabindex="0"
-                  aria-label="Página do IFBA no Facebook"
+                  aria-label="Visite a página do IFBA no Facebook"
                 >
                   <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  tabindex="0"
-                  aria-label="Perfil do IFBA no Twitter"
-                >
+                <a href="#" tabindex="0" aria-label="Siga o IFBA no Twitter">
                   <i class="fa-brands fa-twitter" aria-hidden="true"></i>
                 </a>
               </div>
@@ -542,12 +536,10 @@
       </section>
     </main>
   </body>
-  <!-- ACESSIBILIDADE: Scripts carregados no final para não bloquear o carregamento da página -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"
   ></script>
-  <!-- ACESSIBILIDADE: Script para recursos de acessibilidade personalizados -->
   <script src="js/accessibility.js"></script>
 </html>
