@@ -25,6 +25,7 @@
       crossorigin="anonymous"
     />
     <link rel="icon" href="img/simbolo_acessibilidade.png" type="image/png" />
+    <style></style>
   </head>
   <body>
     <!-- ACESSIBILIDADE: Skip link para permitir que usuários de teclado pulem direto para o conteúdo principal -->
@@ -42,7 +43,7 @@
           />
         </div>
         <!-- ACESSIBILIDADE: Uso de roles semânticos para navegação e aria-label para descrever o propósito -->
-        <nav role="navigation" aria-label="Navegação principal">
+        <nav aria-label="Navegação principal">
           <!-- ACESSIBILIDADE: Uso de aria-current para indicar página atual -->
           <a href="#seccaoUm" tabindex="0" aria-current="page"
             ><h5 class="texto-secundario">Introdução</h5></a
@@ -58,10 +59,9 @@
             ><h5 class="texto-secundario">Contato</h5></a
           >
         </nav>
-        <!-- ACESSIBILIDADE: Uso de role="group" e aria-label para agrupar controles relacionados -->
+        <!-- ACESSIBILIDADE: Uso de aria-label para agrupar controles relacionados -->
         <div
           class="botoes-acessibilidade"
-          role="group"
           aria-label="Controles de acessibilidade"
         >
           <!-- ACESSIBILIDADE: Botões com aria-label descritivo e tabindex para acesso via teclado -->
@@ -94,28 +94,25 @@
       </div>
     </header>
 
-    <!-- ACESSIBILIDADE: Uso de role="main" para identificar o conteúdo principal -->
-    <main id="conteudo-principal" role="main">
-      <!--section seccaoUm-->
-      <!-- ACESSIBILIDADE: ID para ancoragem e para associar com rótulos -->
-      <div class="seccao" id="seccaoUm"></div>
-      <!-- ACESSIBILIDADE: Uso de role="region" e aria-labelledby para demarcar seções e associar com seus títulos -->
-      <section role="region" aria-labelledby="titulo-seccaoUm">
-        <!-- ACESSIBILIDADE: Uso de heading semântico com ID para referência e tabindex para foco -->
+    <main id="conteudo-principal">
+      <!-- Seção de introdução -->
+      <section
+        id="seccaoUm"
+        class="secao-conteudo"
+        aria-labelledby="titulo-seccaoUm"
+      >
         <h1 class="titulo-seccaoUm" id="titulo-seccaoUm" tabindex="0">
           Um site Web acessível
         </h1>
         <div class="conteudo">
           <div class="container-texto">
-            <div class="texto-caixaUm">
-              <!-- ACESSIBILIDADE: Hierarquia de cabeçalhos adequada (h1, h2, etc.) -->
+            <article class="texto-caixaUm">
               <h2 class="titulo-caixaUm" id="titulo-caixaUm" tabindex="0">
                 <strong
                   >A tecnologia a favor da acessibilidade e inclusão</strong
                 >
                 <span class="destaque"></span>
               </h2>
-              <!-- ACESSIBILIDADE: tabindex para permitir navegação sequencial pelo teclado -->
               <p tabindex="0">
                 As pessoas com deficiência sofrem com espaços que não são
                 pensados para eles, enfrentam diversas barreiras em diferentes
@@ -126,9 +123,9 @@
                 deficiência, a tecnologia torna as coisas possíveis".
                 (RADABAUGH, 1993).
               </p>
-            </div>
+            </article>
 
-            <div class="texto-caixaDois">
+            <article class="texto-caixaDois">
               <h2 class="titulo-caixaDois" id="titulo-caixaDois" tabindex="0">
                 <strong>O que é acessibilidade web?</strong>
                 <span class="destaque"></span>
@@ -142,23 +139,25 @@
                 cognitivas, limitações de movimentos, incapacidades de fala,
                 fotossensibilidade e combinações destas características.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!--section seccaoDois-->
-      <div class="seccao" id="seccaoDois"></div>
-      <section role="region" aria-labelledby="titulo-seccaoDois">
-        <h1 class="titulo-seccaoDois" id="titulo-seccaoDois" tabindex="0">
+      <!-- Seção de recursos -->
+      <section
+        id="seccaoDois"
+        class="secao-conteudo"
+        aria-labelledby="titulo-seccaoDois"
+      >
+        <h2 class="titulo-seccaoDois" id="titulo-seccaoDois" tabindex="0">
           Recursos de acessibilidade ao computador
-        </h1>
+        </h2>
 
         <div class="conteudo">
           <div class="card-um">
-            <div class="imagem-seccaoDois">
+            <figure class="imagem-seccaoDois">
               <div class="container" style="width: 20rem">
-                <!-- ACESSIBILIDADE: Carrossel com atributos ARIA para descrever seu papel e propósito -->
                 <div
                   id="carouselExemplo"
                   class="carousel slide"
@@ -168,7 +167,6 @@
                   data-bs-pause="hover"
                 >
                   <div class="carousel-indicators">
-                    <!-- ACESSIBILIDADE: Botões de carrossel com atributos aria para controle e indicação -->
                     <button
                       type="button"
                       data-bs-target="#carouselExemplo"
@@ -201,9 +199,7 @@
                     ></button>
                   </div>
                   <div class="carousel-inner" style="height: 20rem">
-                    <!-- ACESSIBILIDADE: Uso de aria-live para anunciar mudanças de conteúdo dinâmico -->
                     <div class="carousel-item active" aria-live="polite">
-                      <!-- ACESSIBILIDADE: Textos alternativos detalhados para imagens -->
                       <img
                         src="img/mouse_alternativo.png"
                         class="d-block w-100"
@@ -232,7 +228,6 @@
                       />
                     </div>
                   </div>
-                  <!-- ACESSIBILIDADE: Controles de carrossel com rótulos e texto visualmente oculto -->
                   <button
                     class="carousel-control-prev"
                     type="button"
@@ -245,7 +240,6 @@
                       class="carousel-control-prev-icon"
                       aria-hidden="true"
                     ></span>
-                    <!-- ACESSIBILIDADE: Classe visually-hidden mantém texto para leitores de tela -->
                     <span class="visually-hidden">Anterior</span>
                   </button>
                   <button
@@ -264,11 +258,10 @@
                   </button>
                 </div>
               </div>
-              <!-- ACESSIBILIDADE: Legenda para as imagens como contexto adicional -->
               <figcaption tabindex="0">
                 Recursos de acessibilidade ao computador
               </figcaption>
-            </div>
+            </figure>
 
             <div class="texto-seccaoDois">
               <p tabindex="0">
@@ -297,13 +290,15 @@
         </div>
       </section>
 
-      <!--section seccaoTres-->
-      <div class="seccao" id="seccaoTres"></div>
-      <section role="region" aria-labelledby="titulo-seccaoTres">
+      <!-- Seção WCAG -->
+      <section
+        id="seccaoTres"
+        class="secao-conteudo"
+        aria-labelledby="titulo-seccaoTres"
+      >
         <div class="conteudo">
           <div class="container-seccaoTres">
             <div class="informacoes-seccaoTres">
-              <!-- ACESSIBILIDADE: Uso do atributo lang para conteúdo em outros idiomas -->
               <h2 class="titulo-seccaoTres" id="titulo-seccaoTres" tabindex="0">
                 <span lang="en"
                   >WCAG - Web Content Accessibility Guidelines</span
@@ -322,7 +317,6 @@
                 página. Todas as imagens precisam ter um texto alternativo.
               </p>
               <div class="btn-seccaoTres">
-                <!-- ACESSIBILIDADE: Links externos com aria-label descritivo e target="_blank" -->
                 <a
                   href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
                   class="btn-saibaMais"
@@ -339,27 +333,22 @@
         </div>
       </section>
 
-      <!-- section seccaoQuatro - Formulário de Contato  -->
-      <div class="seccao" id="seccaoQuatro"></div>
-      <!-- ACESSIBILIDADE: Seção com role e aria-labelledby para associar com seu título -->
-      <section role="region" aria-labelledby="titulo-form">
+      <!-- Seção de contato -->
+      <section
+        id="seccaoQuatro"
+        class="secao-conteudo"
+        aria-labelledby="titulo-form"
+      >
         <div class="conteudo">
           <div class="container-form">
             <h2 class="titulo-form" id="titulo-form" tabindex="0">
               Entre em Contato
             </h2>
-            <!-- ACESSIBILIDADE: Formulário com role e aria-labelledby -->
-            <form
-              class="formulario-contato"
-              role="form"
-              aria-labelledby="titulo-form"
-            >
+            <form class="formulario-contato" aria-labelledby="titulo-form">
               <fieldset>
                 <legend>Informações de contato</legend>
                 <div class="campo-form">
-                  <!-- ACESSIBILIDADE: Label associado ao input através do atributo for -->
                   <label for="nome">Nome:</label>
-                  <!-- ACESSIBILIDADE: Input com atributos de acessibilidade -->
                   <input
                     type="text"
                     id="nome"
@@ -370,7 +359,6 @@
                     aria-required="true"
                     aria-describedby="nome-desc"
                   />
-                  <!-- ACESSIBILIDADE: Descrição adicional para o campo, visível apenas para leitores de tela -->
                   <div id="nome-desc" class="sr-only">
                     Informe seu nome completo
                   </div>
@@ -412,7 +400,6 @@
               </fieldset>
 
               <div class="botoes-form">
-                <!-- ACESSIBILIDADE: Botões com rótulos claros e acesso via teclado -->
                 <button
                   type="submit"
                   class="btn-enviar"
@@ -437,7 +424,6 @@
 
       <!-- Botão Voltar ao Topo -->
       <div class="voltar-topo">
-        <!-- ACESSIBILIDADE: Link "Voltar ao topo" com aria-label descritivo -->
         <a
           href="#"
           class="btn-topo"
@@ -448,98 +434,86 @@
           Voltar ao começo da página
         </a>
       </div>
-
-      <!--Rodapé -->
-      <section id="footer">
-        <!-- ACESSIBILIDADE: Rodapé com role="contentinfo" para indicar informações de rodapé -->
-        <footer class="rodape" role="contentinfo">
-          <div class="footer-container">
-            <div class="footer-logo">
-              <img
-                src="img/simbolo_acessibilidade.png"
-                id="logo"
-                alt="Símbolo internacional de acessibilidade - Pessoa em cadeira de rodas em fundo azul"
-                tabindex="0"
-              />
-            </div>
-            <div class="footer-content">
-              <p tabindex="0">
-                Seguindo essas dicas você também
-                <span class="destaque">pode criar um site web acessível</span>
-              </p>
-              <div class="lista-links">
-                <p tabindex="0">IFBA campus Feira de Santana</p>
-                <!-- ACESSIBILIDADE: Navegação de rodapé com role e aria-label -->
-                <div
-                  class="links-row"
-                  role="navigation"
-                  aria-label="Links de rodapé"
-                >
-                  <a
-                    href="https://portal.ifba.edu.br/"
-                    target="_blank"
-                    tabindex="0"
-                    aria-label="Visitar o site oficial do IFBA"
-                    rel="noopener noreferrer"
-                    >Portal IFBA</a
-                  >
-                  <span class="separator" aria-hidden="true">|</span>
-                  <a
-                    href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
-                    target="_blank"
-                    tabindex="0"
-                    aria-label="Consultar as diretrizes de Acessibilidade WCAG em português"
-                    rel="noopener noreferrer"
-                    >WCAG em Português</a
-                  >
-                  <span class="separator" aria-hidden="true">|</span>
-                  <a
-                    href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
-                    target="_blank"
-                    tabindex="0"
-                    aria-label="Visitar o portal de acessibilidade digital do governo brasileiro"
-                    rel="noopener noreferrer"
-                    >Acessibilidade Digital</a
-                  >
-                </div>
-              </div>
-              <!-- ACESSIBILIDADE: Links de redes sociais com role e aria-label -->
-              <div
-                class="social-links"
-                role="navigation"
-                aria-label="Redes sociais"
-              >
-                <a href="#" tabindex="0" aria-label="Siga o IFBA no Instagram">
-                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#"
-                  tabindex="0"
-                  aria-label="Acesse o repositório de códigos do IFBA no GitHub"
-                >
-                  <i class="fa-brands fa-github" aria-hidden="true"></i>
-                </a>
-                <a
-                  href="#"
-                  tabindex="0"
-                  aria-label="Visite a página do IFBA no Facebook"
-                >
-                  <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="#" tabindex="0" aria-label="Siga o IFBA no Twitter">
-                  <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </section>
     </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img
+            src="img/simbolo_acessibilidade.png"
+            id="logo"
+            alt="Símbolo internacional de acessibilidade - Pessoa em cadeira de rodas em fundo azul"
+            tabindex="0"
+          />
+        </div>
+        <div class="footer-content">
+          <p tabindex="0">
+            Seguindo essas dicas você também
+            <span class="destaque">pode criar um site web acessível</span>
+          </p>
+          <div class="lista-links">
+            <p tabindex="0">IFBA campus Feira de Santana</p>
+            <nav class="links-row" aria-label="Links de rodapé">
+              <a
+                href="https://portal.ifba.edu.br/"
+                target="_blank"
+                tabindex="0"
+                aria-label="Visitar o site oficial do IFBA"
+                rel="noopener noreferrer"
+                >Portal IFBA</a
+              >
+              <span class="separator" aria-hidden="true">|</span>
+              <a
+                href="https://w3c.br/traducoes/wcag/wcag21-pt-BR/"
+                target="_blank"
+                tabindex="0"
+                aria-label="Consultar as diretrizes de Acessibilidade WCAG em português"
+                rel="noopener noreferrer"
+                >WCAG em Português</a
+              >
+              <span class="separator" aria-hidden="true">|</span>
+              <a
+                href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
+                target="_blank"
+                tabindex="0"
+                aria-label="Visitar o portal de acessibilidade digital do governo brasileiro"
+                rel="noopener noreferrer"
+                >Acessibilidade Digital</a
+              >
+            </nav>
+          </div>
+          <nav class="social-links" aria-label="Redes sociais">
+            <a href="#" tabindex="0" aria-label="Siga o IFBA no Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              tabindex="0"
+              aria-label="Acesse o repositório de códigos do IFBA no GitHub"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              tabindex="0"
+              aria-label="Visite a página do IFBA no Facebook"
+            >
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" tabindex="0" aria-label="Siga o IFBA no Twitter">
+              <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/accessibility.js"></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"
-  ></script>
-  <script src="js/accessibility.js"></script>
 </html>
