@@ -9,7 +9,7 @@
   --primaria: #e4ebf0;
   --secundaria: #bdd1de;
   --terciaria: #8ab3cf;
-  --quaternaria: #4180ab;
+  --quaternaria: #1b5175;
 
   /* Escala tipográfica */
   --font-size-base: 16px;
@@ -102,7 +102,8 @@ nav a {
 }
 
 nav h5 {
-  color: var(--quaternaria);
+  /* color: var(--quaternaria); */
+  color: #112a46;
   margin: 0;
   font-size: var(--font-p);
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -110,8 +111,10 @@ nav h5 {
 }
 
 nav a:hover h5 {
-  color: var(--quaternaria);
-  background-color: var(--secundaria);
+  /* color: var(--quaternaria); */
+  color: #112a46;
+  /* background-color: var(--secundaria); */
+  background-color: #acc8e5;
 }
 
 .sombra {
@@ -134,11 +137,6 @@ nav a:hover h5 {
   flex-wrap: wrap;
   text-align: justify;
   width: var(--content-width);
-}
-
-.destaque {
-  color: var(--quaternaria);
-  font-weight: bold;
 }
 
 .titulo-seccaoUm {
@@ -301,8 +299,8 @@ figcaption {
   align-items: center;
   gap: var(--spacing-xs);
   padding: 0.6rem 1.5rem;
-  background-color: var(--terciaria);
-  color: var(--primaria);
+  background-color: #d6d6d6;
+  color: var(--quaternaria);
   text-decoration: none;
   border: none;
   border-radius: 4px;
@@ -392,7 +390,7 @@ figcaption {
   align-items: center;
   gap: var(--spacing-xs);
   padding: 0.6rem 1.5rem;
-  background-color: var(--terciaria);
+  background-color: var(--quaternaria);
   color: var(--primaria);
   text-decoration: none;
   border: none;
@@ -406,7 +404,7 @@ figcaption {
 
 .btn-enviar:hover,
 .btn-limpar:hover {
-  background-color: var(--quaternaria);
+  background-color: #276b9c;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -540,7 +538,7 @@ figcaption {
   align-items: center;
   gap: var(--spacing-xs);
   padding: 0.6rem 1.5rem;
-  background-color: var(--terciaria);
+  background-color: var(--quaternaria);
   color: var(--primaria);
   text-decoration: none;
   border: none;
@@ -557,7 +555,7 @@ figcaption {
 }
 
 .btn-topo:hover {
-  background-color: var(--quaternaria);
+  background-color: #276b9c;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -576,7 +574,8 @@ figcaption {
 
 .btn-acessibilidade {
   background: none;
-  border: 2px solid var(--quaternaria);
+  /* border: 2px solid var(--quaternaria); */
+  border: 2px solid #112a46;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -585,12 +584,29 @@ figcaption {
   align-items: center;
   justify-content: center;
   transition: var(--transition-default);
-  color: var(--quaternaria);
+  /* color: var(--quaternaria); */
+  color: #112a46;
 }
 
 .btn-acessibilidade:hover {
-  background-color: var(--secundaria);
+  /* background-color: var(--secundaria); */
+  background-color: #acc8e5;
   transform: scale(1.1);
+}
+
+/* ===== CLASSES E ESTILOS DE ACESSIBILIDADE ===== */
+
+/* Classe auxiliar para conteúdo visível apenas para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Modo de cores invertidas */
@@ -606,22 +622,22 @@ html.inverso .carousel-item {
   filter: invert(100%) hue-rotate(180deg);
 }
 
-/* Estados de foco para acessibilidade via teclado */
+/* ===== ESTADOS DE FOCO PARA ACESSIBILIDADE VIA TECLADO ===== */
+/* Estilos de foco claros e visíveis para navegação por teclado
+  Importante para usuários que não utilizam mouse */
 a:focus,
 button:focus,
 input:focus,
-textarea:focus,
-[tabindex="0"]:focus {
+textarea:focus {
   outline: 3px solid var(--terciaria);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-fast);
+  transition: 0.2s ease;
 }
 
-/* Estados de foco para links e botões */
+/* ACESSIBILIDADE: Estilos específicos para cada tipo de elemento interativo */
 a:focus {
   color: var(--quaternaria) !important;
   text-decoration: underline;
-  box-shadow: 0 0 0 3px var(--terciaria);
   transform: translateY(-2px);
 }
 
@@ -631,42 +647,33 @@ button:focus,
 .btn-saibaMais:focus,
 .btn-topo:focus,
 .btn-acessibilidade:focus {
-  box-shadow: 0 0 0 3px var(--terciaria);
+  background-color: var(--quaternaria) !important;
+  color: var(--branco) !important;
   transform: scale(1.05);
-  outline: none;
 }
 
-/* Estados de foco para elementos de formulário */
 input:focus,
 textarea:focus {
   border-color: var(--quaternaria);
-  box-shadow: 0 0 0 3px var(--terciaria);
-  outline: none;
   background-color: var(--branco);
 }
 
-/* Estados de foco para navegação */
 nav a:focus h5 {
   background-color: var(--quaternaria);
   color: var(--branco);
-  transform: translateY(-2px);
 }
 
-/* Estados de foco para links no rodapé */
 .links-row a:focus {
   color: var(--secundaria);
   background-color: var(--quaternaria);
   border-radius: 4px;
-  outline: none;
 }
 
-/* Estados de foco para ícones de mídia social */
 .fa-brands:focus {
   color: var(--branco);
   transform: scale(1.2);
 }
 
-/* Maior especificidade para focus-visible */
 :focus-visible {
   outline: 3px solid var(--terciaria);
   outline-offset: 2px;

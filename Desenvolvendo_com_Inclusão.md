@@ -8,7 +8,7 @@ A acessibilidade web não é apenas uma exigência técnica, mas uma responsabil
 
 ## User Stories: Entendendo a Perspectiva do Usuário
 
-Para compreender a importância da acessibilidade, considere estas histórias reais:
+Para compreender a importância da acessibilidade, considere estas histórias:
 
 - **Marcos**, usuário cego que navega com leitor de tela: "Quando as imagens não têm descrições alternativas, perco completamente o contexto da página. É como tentar assistir a um filme com a tela desligada."
 

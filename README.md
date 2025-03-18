@@ -21,7 +21,7 @@ cd OficinaWebAcessivel
 
 1. Leia o [Desenvolvendo com Inclusão](Desenvolvendo_com_Inclusão.md) para entender os conceitos teóricos e a importância da acessibilidade web.
 
-2. Leia o [Roteiro](Resumo_Roteiro.md) para ver exemplos práticos de código acessível vs. inacessível, com explicações técnicas.
+2. Leia o [Práticas de Acessibilidade Web](Praticas_de_Acessibilidade_na_Web.md) para ver exemplos práticos de código acessível vs. inacessível, com explicações técnicas.
 
 ## Ferramentas Recomendadas
 

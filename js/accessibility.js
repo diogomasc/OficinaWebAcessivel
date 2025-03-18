@@ -165,6 +165,33 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.head.appendChild(style);
 
+  /**
+   * Melhora a funcionalidade do skip link (pular para conteúdo principal)
+   * Garante que o link funcione corretamente em todos os navegadores
+   */
+  const skipLink = document.querySelector(".skip-link");
+  if (skipLink) {
+    skipLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.setAttribute("tabindex", "-1");
+        targetElement.focus();
+
+        // Remove o tabindex depois que o elemento perder o foco
+        targetElement.addEventListener(
+          "blur",
+          function () {
+            this.removeAttribute("tabindex");
+          },
+          { once: true }
+        );
+      }
+    });
+  }
+
   // Coleta todos os elementos focáveis para navegação por teclado
   const focusableElements = Array.from(
     document.querySelectorAll(
@@ -337,6 +364,33 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  /**
+   * Adiciona suporte para navegação por ancoragem suave
+   * Melhora a experiência de navegação pelas seções da página
+   */
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Rolagem suave para o elemento
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: "smooth",
+        });
+
+        // Atualiza a URL com o hash sem recarregar a página
+        history.pushState(null, null, this.getAttribute("href"));
+
+        // Atualiza o estado de navegação
+        updateAriaCurrent();
+      }
+    });
+  });
 });
 
 /**
