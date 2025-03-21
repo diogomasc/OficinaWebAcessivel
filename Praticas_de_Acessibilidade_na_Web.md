@@ -10,6 +10,8 @@
 
 ### Uso correto de elementos estruturais
 
+Ao usar elementos semânticos como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` e `<footer>`, você define claramente a estrutura do documento. Isso facilita a navegação por leitores de tela e outras tecnologias assistivas, pois esses elementos comunicam o propósito e a hierarquia do conteúdo. Atributos como `aria-labelledby` criam conexões importantes entre elementos, como títulos e suas seções correspondentes.
+
 ```html
 <!-- Antes (inacessível) -->
 <div class="header">
@@ -42,9 +44,9 @@
 <footer>...</footer>
 ```
 
-Ao usar elementos semânticos como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` e `<footer>`, você define claramente a estrutura do documento. Isso facilita a navegação por leitores de tela e outras tecnologias assistivas, pois esses elementos comunicam o propósito e a hierarquia do conteúdo. Atributos como `aria-labelledby` criam conexões importantes entre elementos, como títulos e suas seções correspondentes.
-
 ### Uso de figure e figcaption para imagens
+
+Os elementos `<figure>` e `<figcaption>` trabalham juntos para criar uma associação explícita entre uma imagem e sua descrição. Isso melhora a compreensão do conteúdo para todos os usuários, especialmente aqueles que utilizam tecnologias assistivas, pois deixa claro que a legenda pertence àquela imagem específica.
 
 ```html
 <!-- Antes (inacessível) -->
@@ -65,11 +67,11 @@ Ao usar elementos semânticos como `<header>`, `<nav>`, `<main>`, `<section>`, `
 </figure>
 ```
 
-Os elementos `<figure>` e `<figcaption>` trabalham juntos para criar uma associação explícita entre uma imagem e sua descrição. Isso melhora a compreensão do conteúdo para todos os usuários, especialmente aqueles que utilizam tecnologias assistivas, pois deixa claro que a legenda pertence àquela imagem específica.
-
 ## 3. Imagens Acessíveis
 
 ### Textos alternativos significativos
+
+Os textos alternativos devem descrever o propósito ou conteúdo da imagem, não apenas indicar que existe uma imagem. Descrições como "imagem" ou "banner" não ajudam pessoas que não podem ver a imagem a entender seu conteúdo. Para imagens puramente decorativas, use `alt=""` para que leitores de tela as ignorem.
 
 ```html
 <!-- Antes (inacessível) -->
@@ -91,9 +93,9 @@ Os elementos `<figure>` e `<figcaption>` trabalham juntos para criar uma associa
 />
 ```
 
-Os textos alternativos devem descrever o propósito ou conteúdo da imagem, não apenas indicar que existe uma imagem. Descrições como "imagem" ou "banner" não ajudam pessoas que não podem ver a imagem a entender seu conteúdo. Para imagens puramente decorativas, use `alt=""` para que leitores de tela as ignorem.
-
 ### Ícones decorativos e redundância
+
+Quando um ícone é acompanhado de texto e serve apenas como elemento visual, o atributo `aria-hidden="true"` deve ser usado para removê-lo da árvore de acessibilidade. Isso evita que leitores de tela anunciem informações redundantes, como "ícone casa Página Inicial", melhorando a experiência dos usuários.
 
 ```html
 <!-- Antes (inacessível) -->
@@ -111,11 +113,11 @@ Os textos alternativos devem descrever o propósito ou conteúdo da imagem, não
 </button>
 ```
 
-Quando um ícone é acompanhado de texto e serve apenas como elemento visual, o atributo `aria-hidden="true"` deve ser usado para removê-lo da árvore de acessibilidade. Isso evita que leitores de tela anunciem informações redundantes, como "ícone casa Página Inicial", melhorando a experiência dos usuários.
-
 ## 4. Formulários Acessíveis
 
 ### Associação de labels e controles
+
+A conexão entre um rótulo (`<label>`) e seu campo correspondente através do atributo `for` é essencial para a acessibilidade. Essa associação permite que os usuários cliquem no texto do rótulo para ativar o campo, beneficiando pessoas com mobilidade reduzida. Também ajuda leitores de tela a identificar corretamente a função de cada campo do formulário.
 
 ```html
 <!-- Antes (inacessível) -->
@@ -141,13 +143,13 @@ Quando um ícone é acompanhado de texto e serve apenas como elemento visual, o 
 </div>
 ```
 
-A conexão entre um rótulo (`<label>`) e seu campo correspondente através do atributo `for` é essencial para a acessibilidade. Essa associação permite que os usuários cliquem no texto do rótulo para ativar o campo, beneficiando pessoas com mobilidade reduzida. Também ajuda leitores de tela a identificar corretamente a função de cada campo do formulário.
-
 ### Descrições adicionais para campos
+
+O atributo `aria-describedby` cria uma ligação entre o campo e sua descrição detalhada, garantindo que usuários de leitores de tela recebam informações completas sobre os requisitos. A classe `sr-only` (screen reader only) permite incluir instruções mais detalhadas que são acessíveis para tecnologias assistivas, mas não afetam o layout visual para outros usuários.
 
 ```html
 <!-- Antes (inacessível) -->
-<label for="senha">Senha:</label>
+<label>Senha:</label>
 <input type="password" id="senha" name="senha" />
 <span class="nota-pequena">Mínimo de 8 caracteres com letras e números</span>
 ```
@@ -170,35 +172,49 @@ A conexão entre um rótulo (`<label>`) e seu campo correspondente através do a
 </span>
 ```
 
-O atributo `aria-describedby` cria uma ligação entre o campo e sua descrição detalhada, garantindo que usuários de leitores de tela recebam informações completas sobre os requisitos. A classe `sr-only` (screen reader only) permite incluir instruções mais detalhadas que são acessíveis para tecnologias assistivas, mas não afetam o layout visual para outros usuários.
-
 ## 5. Elementos Interativos
 
 ### Botões e links acessíveis
 
+Sempre use elementos nativos do HTML com propósito claro: `<button>` para ações e `<a>` para links. Esses elementos já vêm com comportamentos acessíveis integrados, como foco via teclado e interação com tecla Enter. Adicione descrições específicas com `aria-label` quando o texto visível não for suficientemente descritivo sobre o destino ou a ação.
+
 ```html
 <!-- Antes (inacessível) -->
+
+<!-- Botão -->
 <div class="botao" onclick="enviar()">Enviar</div>
+
+<!-- Link -->
 <a href="docs/manual.pdf">Clique aqui</a>
 ```
 
 ```html
 <!-- Depois (acessível) -->
-<button type="button" class="botao" aria-label="Enviar formulário">
+
+<!-- Botão -->
+<button
+  type="button"
+  class="botao"
+  aria-label="Enviar formulário"
+  onclick="enviar()"
+>
   Enviar
 </button>
+
+<!-- Link -->
 <a
   href="docs/manual.pdf"
   aria-label="Baixar manual do usuário em PDF (2.5MB)"
   download
 >
   Manual do Usuário (PDF)
+  <i class="fa-solid fa-download" aria-hidden="true"></i>
 </a>
 ```
 
-Sempre use elementos nativos do HTML com propósito claro: `<button>` para ações e `<a>` para links. Esses elementos já vêm com comportamentos acessíveis integrados, como foco via teclado e interação com tecla Enter. Adicione descrições específicas com `aria-label` quando o texto visível não for suficientemente descritivo sobre o destino ou a ação.
-
 ### Links externos seguros
+
+Ao usar `target="_blank"` para abrir links em novas janelas, sempre inclua `rel="noopener noreferrer"` para prevenir vulnerabilidades de segurança. Além disso, é importante informar ao usuário que o link abrirá em uma nova janela, como com um texto descritivo no `aria-label`. Isso evita confusão para usuários que não esperam que a navegação os leve para fora da página atual.
 
 ```html
 <!-- Antes (inacessível) -->
@@ -218,11 +234,11 @@ Sempre use elementos nativos do HTML com propósito claro: `<button>` para açõ
 </a>
 ```
 
-Ao usar `target="_blank"` para abrir links em novas janelas, sempre inclua `rel="noopener noreferrer"` para prevenir vulnerabilidades de segurança. Além disso, é importante informar ao usuário que o link abrirá em uma nova janela, seja através de um ícone visual (com `aria-hidden="true"`) ou texto descritivo no `aria-label`. Isso evita confusão para usuários que não esperam que a navegação os leve para fora da página atual.
-
 ## 6. Contraste de Cores e Focus Visible
 
 ### Garantir contraste adequado
+
+As diretrizes WCAG recomendam uma taxa de contraste mínima de 4,5:1 para texto normal e 3:1 para textos grandes ou elementos de interface. Um bom contraste beneficia não apenas pessoas com baixa visão, mas todos os usuários em condições de iluminação difíceis, como luz solar direta. Ferramentas como o WebAIM Contrast Checker (https://webaim.org/resources/contrastchecker/) ajudam a verificar se suas combinações de cores atendem aos padrões.
 
 ```css
 /* Antes (inacessível - baixo contraste) */
@@ -240,9 +256,9 @@ Ao usar `target="_blank"` para abrir links em novas janelas, sempre inclua `rel=
 }
 ```
 
-As diretrizes WCAG recomendam uma taxa de contraste mínima de 4,5:1 para texto normal e 3:1 para textos grandes ou elementos de interface. Um bom contraste beneficia não apenas pessoas com baixa visão, mas todos os usuários em condições de iluminação difíceis, como luz solar direta. Ferramentas como o WebAIM Contrast Checker (https://webaim.org/resources/contrastchecker/) ajudam a verificar se suas combinações de cores atendem aos padrões.
-
 ### Estados de foco claros
+
+Nunca remova completamente o indicador de foco com `outline: none` sem fornecer uma alternativa. Os indicadores de foco são essenciais para usuários de teclado saberem onde estão na página. O pseudo-seletor `:focus-visible` é uma abordagem moderna para distinguir entre foco obtido via mouse (que pode ser mais sutil) e foco via teclado (que deve ser mais evidente), mantendo a acessibilidade sem comprometer a estética do site.
 
 ```css
 /* Antes (inacessível - foco removido) */
@@ -254,27 +270,41 @@ button:focus {
 ```css
 /* Depois (acessível - foco destacado) */
 button:focus {
+  /* Cria uma borda externa sólida azul de 3px ao redor do elemento quando focado */
   outline: 3px solid #4180ab;
+
+  /* Adiciona um espaçamento de 2px entre o elemento e a borda de foco */
   outline-offset: 2px;
+
+  /* Cria um efeito de brilho suave azul semi-transparente ao redor do elemento */
   box-shadow: 0 0 8px rgba(65, 128, 171, 0.6);
+
+  /* Suaviza a transição de todas as propriedades acima durante 0.2 segundos */
   transition: all 0.2s ease;
 }
 
-/* Diferenciação entre foco por mouse e teclado */
+/* Remove os indicadores visuais quando o foco é feito por mouse/clique */
 :focus:not(:focus-visible) {
+  /* Remove a borda externa */
   outline: none;
+
+  /* Remove o efeito de brilho */
   box-shadow: none;
 }
 
+/* Aplica estilo específico quando o foco é feito por teclado */
 :focus-visible {
+  /* Cria uma borda externa sólida azul de 3px */
   outline: 3px solid #4180ab;
+
+  /* Adiciona espaçamento de 2px entre o elemento e a borda */
   outline-offset: 2px;
 }
 ```
 
-Nunca remova completamente o indicador de foco com `outline: none` sem fornecer uma alternativa. Os indicadores de foco são essenciais para usuários de teclado saberem onde estão na página. O pseudo-seletor `:focus-visible` é uma abordagem moderna para distinguir entre foco obtido via mouse (que pode ser mais sutil) e foco via teclado (que deve ser mais evidente), mantendo a acessibilidade sem comprometer a estética do site.
-
 ### Navegação avançada com JavaScript
+
+Para criar componentes interativos verdadeiramente acessíveis, é necessário garantir que funcionem tanto com mouse quanto com teclado. Adicionar eventos `keydown` permite que usuários ativem funções usando teclas comuns como Enter e Espaço. A implementação de navegação por setas cria uma experiência ainda mais rica, permitindo que usuários naveguem rapidamente entre elementos focáveis sem precisar usar repetidamente a tecla Tab.
 
 ```javascript
 // ====== EXEMPLO: SUPORTE BÁSICO A TECLADO ======
@@ -347,11 +377,11 @@ document.addEventListener("keydown", function (e) {
 });
 ```
 
-Para criar componentes interativos verdadeiramente acessíveis, é necessário garantir que funcionem tanto com mouse quanto com teclado. Adicionar eventos `keydown` permite que usuários ativem funções usando teclas comuns como Enter e Espaço. A implementação de navegação por setas cria uma experiência ainda mais rica, permitindo que usuários naveguem rapidamente entre elementos focáveis sem precisar usar repetidamente a tecla Tab.
-
 ## 8. Atributos ARIA e Textos Auxiliares
 
 ### Landmarks e regiões
+
+Os elementos semânticos do HTML5 criam automaticamente landmarks ARIA, que funcionam como pontos de referência na página. Isso permite que usuários de leitores de tela naveguem rapidamente entre seções importantes, como cabeçalho, navegação e conteúdo principal. O atributo `aria-labelledby` cria uma conexão entre um elemento e seu título, tornando a estrutura ainda mais clara para usuários de tecnologias assistivas.
 
 ```html
 <!-- Antes (sem landmarks) -->
@@ -372,9 +402,9 @@ Para criar componentes interativos verdadeiramente acessíveis, é necessário g
 </main>
 ```
 
-Os elementos semânticos do HTML5 criam automaticamente landmarks ARIA, que funcionam como pontos de referência na página. Isso permite que usuários de leitores de tela naveguem rapidamente entre seções importantes, como cabeçalho, navegação e conteúdo principal. O atributo `aria-labelledby` cria uma conexão entre um elemento e seu título, tornando a estrutura ainda mais clara para usuários de tecnologias assistivas.
-
 ### Componentes dinâmicos com aria-live
+
+O atributo `aria-live` é essencial para conteúdo dinâmico, pois determina como e quando as tecnologias assistivas anunciam mudanças na página. Use `aria-live="polite"` para atualizações que podem esperar até que o usuário pare de interagir (como notificações informativas) ou `aria-live="assertive"` para informações críticas que precisam de atenção imediata (como erros graves). Além disso, é importante dar tempo suficiente para que os usuários de leitores de tela processem a informação antes que ela desapareça.
 
 ```html
 <!-- Antes (feedback não acessível) -->
@@ -477,9 +507,9 @@ Os elementos semânticos do HTML5 criam automaticamente landmarks ARIA, que func
 </script>
 ```
 
-O atributo `aria-live` é essencial para conteúdo dinâmico, pois determina como e quando as tecnologias assistivas anunciam mudanças na página. Use `aria-live="polite"` para atualizações que podem esperar até que o usuário pare de interagir (como notificações informativas) ou `aria-live="assertive"` para informações críticas que precisam de atenção imediata (como erros graves). Além disso, é importante dar tempo suficiente para que os usuários de leitores de tela processem a informação antes que ela desapareça.
-
 ### Classe sr-only para conteúdo invisível
+
+A classe `sr-only` é uma técnica valiosa que permite fornecer informações adicionais apenas para leitores de tela, sem afetar o design visual. Diferentemente de `display: none` ou `visibility: hidden` (que ocultam o conteúdo também para tecnologias assistivas), elementos com a classe `sr-only` permanecem acessíveis para leitores de tela enquanto são visualmente removidos da página.
 
 ```html
 <!-- Uso da classe sr-only -->
@@ -503,11 +533,11 @@ O atributo `aria-live` é essencial para conteúdo dinâmico, pois determina com
 </style>
 ```
 
-A classe `sr-only` é uma técnica valiosa que permite fornecer informações adicionais apenas para leitores de tela, sem afetar o design visual. Diferentemente de `display: none` ou `visibility: hidden` (que ocultam o conteúdo também para tecnologias assistivas), elementos com a classe `sr-only` permanecem acessíveis para leitores de tela enquanto são visualmente removidos da página.
-
 ## 9. Idioma e Conteúdo
 
 ### Definição de idioma
+
+O atributo `lang` é fundamental para que leitores de tela pronunciem corretamente o conteúdo. Defina o idioma principal no elemento `<html>` e use o atributo em elementos específicos para palavras ou frases em outros idiomas. Isso garante que a pronúncia seja adequada e melhora significativamente a experiência de usuários que dependem de tecnologias de síntese de voz.
 
 ```html
 <!-- Antes (sem especificação de idioma) -->
@@ -537,9 +567,9 @@ A classe `sr-only` é uma técnica valiosa que permite fornecer informações ad
 </html>
 ```
 
-O atributo `lang` é fundamental para que leitores de tela pronunciem corretamente o conteúdo. Defina o idioma principal no elemento `<html>` e use o atributo em elementos específicos para palavras ou frases em outros idiomas. Isso garante que a pronúncia seja adequada e melhora significativamente a experiência de usuários que dependem de tecnologias de síntese de voz.
-
 ### Meta descrições e SEO
+
+As meta descrições servem a dois propósitos importantes: ajudam usuários de leitores de tela a entender o propósito da página antes de acessá-la e melhoram o SEO do site. Uma boa meta descrição deve resumir claramente o conteúdo da página em aproximadamente 155-160 caracteres, tornando-a facilmente compreensível tanto para humanos quanto para algoritmos de busca.
 
 ```html
 <!-- Antes (sem meta descrição) -->
@@ -559,9 +589,9 @@ O atributo `lang` é fundamental para que leitores de tela pronunciem corretamen
 </head>
 ```
 
-As meta descrições servem a dois propósitos importantes: ajudam usuários de leitores de tela a entender o propósito da página antes de acessá-la e melhoram o SEO do site. Uma boa meta descrição deve resumir claramente o conteúdo da página em aproximadamente 155-160 caracteres, tornando-a facilmente compreensível tanto para humanos quanto para algoritmos de busca.
-
 ## 10. Carrosséis acessíveis
+
+Carrosséis são componentes complexos que precisam de cuidado especial para serem acessíveis. Use `aria-roledescription="carrossel"` para identificar claramente o tipo de componente, forneça descrições apropriadas com `aria-label`, e garanta que todos os controles sejam rotulados adequadamente. O atributo `aria-live="polite"` nos slides ativos informa leitores de tela sobre mudanças de conteúdo. Adicione suporte a navegação por teclado, permitindo que usuários controlem o carrossel com teclas de seta, tornando-o utilizável mesmo sem o mouse.
 
 ```html
 <!-- Antes (carrossel inacessível) -->
@@ -603,9 +633,7 @@ As meta descrições servem a dois propósitos importantes: ajudam usuários de 
     <span class="sr-only">Próximo</span>
   </button>
   <div class="carousel-indicators" aria-label="Navegação de slides">
-    <button aria-label="Slide 1 de 4 - selecionado" aria-current="true">
-      1
-    </button>
+    <button aria-label="Slide 1 de 4" aria-current="true">1</button>
     <button aria-label="Slide 2 de 4">2</button>
     <!-- mais indicadores... -->
   </div>
@@ -642,8 +670,6 @@ As meta descrições servem a dois propósitos importantes: ajudam usuários de 
 </script>
 ```
 
-Carrosséis são componentes complexos que precisam de cuidado especial para serem acessíveis. Use `aria-roledescription="carrossel"` para identificar claramente o tipo de componente, forneça descrições apropriadas com `aria-label`, e garanta que todos os controles sejam rotulados adequadamente. O atributo `aria-live="polite"` nos slides ativos informa leitores de tela sobre mudanças de conteúdo. Adicione suporte a navegação por teclado, permitindo que usuários controlem o carrossel com teclas de seta, tornando-o utilizável mesmo sem o mouse.
-
 ## 11. Testando a Acessibilidade
 
 ### Ferramentas automatizadas
@@ -677,6 +703,12 @@ Carrosséis são componentes complexos que precisam de cuidado especial para ser
 
 ### Uso correto de tabindex
 
+O uso correto do atributo `tabindex` é crucial para uma boa navegação por teclado:
+
+- Evite usar valores positivos (`tabindex="1"`, `tabindex="2"`, etc.), pois eles quebram a ordem natural de navegação e tornam a manutenção difícil.
+- Use `tabindex="0"` para tornar elementos não-focáveis (como `<div>`) acessíveis via teclado, incorporando-os na ordem natural de tabulação.
+- Use `tabindex="-1"` para elementos que precisam receber foco programaticamente (via JavaScript), mas não devem ser acessíveis durante a navegação normal com Tab.
+
 ```html
 <!-- Antes (uso incorreto de tabindex) -->
 <div tabindex="1">Primeiro</div>
@@ -695,12 +727,6 @@ Carrosséis são componentes complexos que precisam de cuidado especial para ser
 <!-- Para elementos que devem ser programaticamente focáveis, mas não via Tab: -->
 <div id="painel-conteudo" tabindex="-1"></div>
 ```
-
-O uso correto do atributo `tabindex` é crucial para uma boa navegação por teclado:
-
-- Evite usar valores positivos (`tabindex="1"`, `tabindex="2"`, etc.), pois eles quebram a ordem natural de navegação e tornam a manutenção difícil.
-- Use `tabindex="0"` para tornar elementos não-focáveis (como `<div>`) acessíveis via teclado, incorporando-os na ordem natural de tabulação.
-- Use `tabindex="-1"` para elementos que precisam receber foco programaticamente (via JavaScript), mas não devem ser acessíveis durante a navegação normal com Tab.
 
 ## Conclusão
 

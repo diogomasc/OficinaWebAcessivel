@@ -624,51 +624,62 @@ html.inverso .carousel-item {
 
 /* ===== ESTADOS DE FOCO PARA ACESSIBILIDADE VIA TECLADO ===== */
 /* Estilos de foco claros e visíveis para navegação por teclado
-  Importante para usuários que não utilizam mouse */
+   Importante para usuários que não utilizam mouse */
 a:focus,
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+[tabindex="0"]:focus {
   outline: 3px solid var(--terciaria);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.2s ease;
+  outline-offset: 2px;
+  box-shadow: 0 0 8px rgba(138, 179, 207, 0.8);
+  transition: all 0.2s ease;
 }
 
-/* ACESSIBILIDADE: Estilos específicos para cada tipo de elemento interativo */
-a:focus {
-  color: var(--quaternaria) !important;
-  text-decoration: underline;
-  transform: translateY(-2px);
-}
-
+/* Estilo de foco para botões */
 button:focus,
 .btn-enviar:focus,
 .btn-limpar:focus,
-.btn-saibaMais:focus,
-.btn-topo:focus,
-.btn-acessibilidade:focus {
-  background-color: var(--quaternaria) !important;
-  color: var(--branco) !important;
-  transform: scale(1.05);
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--quaternaria);
-  background-color: var(--branco);
-}
-
-nav a:focus h5 {
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.btn-acessibilidade:focus,
+.btn-topo:focus {
   background-color: var(--quaternaria);
   color: var(--branco);
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
 
+/* Estilo específico para o botão Saiba Mais */
+a.btn-saibaMais:focus {
+  background-color: var(--branco);
+  color: var(--quaternaria);
+  transform: scale(1.05);
+  outline: 3px solid var(--terciaria);
+  outline-offset: 2px;
+  box-shadow: 0 0 8px rgba(138, 179, 207, 0.8);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+/* Estilo de foco para links de navegação */
+nav a:focus h5 {
+  color: var(--branco);
+  background-color: var(--quaternaria);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+/* Estilo de foco para links em linhas */
 .links-row a:focus {
   color: var(--secundaria);
   background-color: var(--quaternaria);
   border-radius: 4px;
+  transform: translateY(-2px);
 }
 
+/* Estilo de foco para ícones de redes sociais */
 .fa-brands:focus {
   color: var(--branco);
   transform: scale(1.2);
